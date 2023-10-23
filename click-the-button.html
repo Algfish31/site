@@ -1,0 +1,1012 @@
+<html>
+    <head>
+        <title>0 clicks - Click the Button - Algfish31.com</title>
+        <style>
+            body {
+                font-family: "Neue Pixel Sans", monospace, sans-serif;
+                background-color: lightgray;
+                user-select: none;
+            }
+            .section-left {
+                float: left;
+                width: 80%;
+                height: 1070px;
+            }
+
+            .section-right {
+                float: right;
+                width: 20%;
+            }
+
+            .score-container {
+                width: 90%;
+                text-align: center;
+                color: lightgray;
+                background-color: #2c2c2c;
+                margin-top: 20px;
+                border: 4px solid black;
+                border-radius: 200px;
+            }
+
+            .clicker-container {
+                margin-left: 320px;
+                margin-top: 50px;
+            }
+
+            .clicker-container img {
+                cursor: pointer;
+            }
+
+            .shopButton {
+                width: 19.67%;
+                float: right;
+                background-color: #b5b5b5;
+                margin: 10px 0px 10px 0px;
+                border: 3px solid gray;
+            }
+
+            .shopButton #image {
+                width: 25%;
+            }
+
+            .shopButton #nameAndPrice {
+                margin: 0px;
+                width: 60%;
+            }
+
+            .shopButton #level {
+                font-size: 48px;
+            }
+
+            #shop-type {
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            .shopButton:hover {
+                background-color: lightgray;;
+            }
+
+            #notification:hover {
+                background-color: #b5b5b5;
+            }
+        </style>
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9J2GNBLD1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N9J2GNBLD1');
+    </script>
+    <body>
+        <div class="section-left">
+            <div class="score-container">
+                <h1><span id="click-num">0</span> clicks</h1>
+                <h2><span id="cps-num">0</span> CPS</h2>
+            </div>
+            <div class="clicker-container">
+                <img
+                    src="gray_button.png"
+                    height="300px"
+                    width="300px"
+                    onclick="addClick(clickPower)" />
+            </div>
+        </div>
+        <div id="section-right">
+            <span id="shop-type">NOTIFICATIONS</span><br>
+            <table class="shopButton" id="notification">
+                <tr>
+                    <td id="nameAndPrice">
+                        <h3 id="notification-text">Most Recent Achievement</h3>
+                        <span id="notification-description-text" style="font-size: 12px;">Description</span>
+                    </td>
+                </tr>
+            </table>
+            <h2 style="text-align: center; margin: auto">Shop</h2>
+            <span id="shop-type">UPGRADES</span><br />
+            <table class="shopButton" onclick="buyButtonUpgrade()">
+                <tr>
+                    <td id="image">
+                        <img
+                            src="humble-beginnings.png"
+                            height="30"
+                            width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Button Upgrade</p>
+                        <p><img src="humble-beginnings.png"> <span id="button-upgrade-price">100</span></p>
+                    </td>
+                    <td id="level"><span id="button-upgrade-level">0</span></td>
+                </tr>
+            </table>
+            <span id="shop-type">BUILDS</span>
+            <table class="shopButton" onclick="buyAutoclicker()" id="autoclicker-button">
+                <tr>
+                    <td id="image">
+                        <img src="autoclicker.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Autoclicker</p>
+                        <p><img src="humble-beginnings.png"> <span id="autoclicker-price">15</span></p>
+                    </td>
+                    <td id="level"><span id="autoclicker-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyFist()">
+                <tr>
+                    <td id="image">
+                        <img src="fist.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Fist</p>
+                        <p><img src="humble-beginnings.png"> <span id="fist-price">100</span></p>
+                    </td>
+                    <td id="level"><span id="fist-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyFriend()">
+                <tr>
+                    <td id="image">
+                        <img src="friend.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Friend</p>
+                        <p><img src="humble-beginnings.png"> <span id="friend-price">1100</span></p>
+                    </td>
+                    <td id="level"><span id="friend-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyLightning()">
+                <tr>
+                    <td id="image">
+                        <img src="lightning.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Lightning</p>
+                        <p><img src="humble-beginnings.png"> <span id="lightning-price">12000</span></p>
+                    </td>
+                    <td id="level"><span id="lightning-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyWizard()">
+                <tr>
+                    <td id="image">
+                        <img src="wizard.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Wizard</p>
+                        <p><img src="humble-beginnings.png"> <span id="wizard-price">130000</span></p>
+                    </td>
+                    <td id="level"><span id="wizard-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyTimeMachine()">
+                <tr>
+                    <td id="image">
+                        <img src="time-machine.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Time Machine</p>
+                        <p><img src="humble-beginnings.png"> <span id="time-machine-price">1400000</span></p>
+                    </td>
+                    <td id="level"><span id="time-machine-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyPortal()">
+                <tr>
+                    <td id="image">
+                        <img src="portal.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Portal</p>
+                        <p><img src="humble-beginnings.png"> <span id="portal-price">20000000</span></p>
+                    </td>
+                    <td id="level"><span id="portal-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyPlanet()">
+                <tr>
+                    <td id="image">
+                        <img src="portal.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Planet</p>
+                        <p><img src="humble-beginnings.png"> <span id="planet-price">330000000</span></p>
+                    </td>
+                    <td id="level"><span id="planet-level">0</span></td>
+                </tr>
+            </table>
+            <table class="shopButton" onclick="buyRobot()">
+                <tr>
+                    <td id="image">
+                        <img src="robot.png" height="30" width="30" />
+                    </td>
+                    <td id="nameAndPrice">
+                        <p>Robot</p>
+                        <p><img src="humble-beginnings.png"> <span id="robot-price">5100000000</span></p>
+                    </td>
+                    <td id="level"><span id="robot-level">0</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="menu" style="float: left;">
+            <a href="#achivements">Achivements</a>
+            <a href="#stats">Stats</a>
+            <a href="#history">History</a>
+        </div>
+        <br>
+        <div class="achievements" id="achivements">
+            <h3>Achievements</h3>
+            <span id="humble-beginnings-text">???</span><br>
+            <span id="humble-beginnings-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="took-a-while-text">???</span><br>
+            <span id="took-a-while-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="awesome-clicker-text">???</span><br>
+            <span id="awesome-clicker-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="busy-clicker-text">???</span><br>
+            <span id="busy-clicker-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="my-fingers-hurt-text">???</span><br>
+            <span id="my-fingers-hurt-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="how-long-have-you-been-playing-text">???</span><br>
+            <span id="how-long-have-you-been-playing-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="click-text">???</span><br>
+            <span id="click-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="click-click-text">???</span><br>
+            <span id="click-click-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="clickety-click-text">???</span><br>
+            <span id="clickety-click-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="clabra-cladabra-clalakzam-text">???</span><br>
+            <span id="clabra-cladabra-clalakzam-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="punch-text">???</span><br>
+            <span id="punch-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="ouch-that-hurts-text">???</span><br>
+            <span id="ouch-that-hurts-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="button-nearly-broken-text">???</span><br>
+            <span id="button-nearly-broken-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="buying-a-pc-text">???</span><br>
+            <span id="buying-a-pc-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="broken-mice-text">???</span><br>
+            <span id="broken-mice-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="pcs-are-expensive-text">???</span><br>
+            <span id="pcs-are-expensive-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="gray-clouds-text">???</span><br>
+            <span id="gray-clouds-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="i-cant-fall-asleep-text">???</span><br>
+            <span id="i-cant-fall-asleep-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="mom-i-cant-see-its-too-yellow-text">???</span><br>
+            <span id="mom-i-cant-see-its-too-yellow-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="magic-text">???</span><br>
+            <span id="magic-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="oops-i-struck-a-human-text">???</span><br>
+            <span id="oops-i-struck-a-human-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="hogwarts-text">???</span><br>
+            <span id="hogwarts-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="time-travel-text">???</span><br>
+            <span id="time-travel-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="vacation-in-the-past-text">???</span><br>
+            <span id="vacation-in-the-past-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="the-future-has-more-clicks-text">???</span><br>
+            <span id="the-future-has-more-clicks-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="a-new-dimension-text">???</span><br>
+            <span id="a-new-dimension-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="creepy-outerdimensional-monsters-text">???</span><br>
+            <span id="creepy-outerdimensional-monsters-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="another-travel-method-text">???</span><br>
+            <span id="another-travel-method-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="click-planet-text">???</span><br>
+            <span id="click-planet-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="they-are-taking-up-too-much-space-text">???</span><br>
+            <span id="they-are-taking-up-too-much-space-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="click-galaxy-text">???</span><br>
+            <span id="click-galaxy-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="beep-text">???</span><br>
+            <span id="beep-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="boop-text">???</span><br>
+            <span id="boop-description-text" style="font-size: 12px;"></span><br>
+            <p></p>
+            <span id="beep-boop-text">???</span><br>
+            <span id="beep-boop-description-text" style="font-size: 12px;"></span><br>
+        </div>
+        <div class="stats" id="stats">
+            <h3>Stats</h3>
+            Clicks:
+            <img src="humble-beginnings.png" height="15" width="10" />
+            <span id="stats-clicks">0</span><br />
+            Clicks (all-time):
+            <img src="humble-beginnings.png" height="15" width="10" />
+            <span id="stats-clicks-all-time">0</span><br />
+            Builds Owned:
+            <span id="stats-builds-owned">0</span><br />
+            Clicks per Second:
+            <span id="stats-clicks-per-second">0</span><br />
+            Clicks per Click:
+            <span id="stats-clicks-per-click">1</span><br />
+            Button Clicks:
+            <span id="stats-button-clicks">0</span><br />
+            Self-Made Clicks:
+            <span id="stats-self-made-clicks">0</span><br />
+            Build-Made Clicks:
+            <span id="stats-build-made-clicks">0</span><br />
+            Current Version: 1.001 (6/27/2023)
+        </div>
+        <div class="history" id="history">
+            <h3>History</h3>
+            Prototype/Alpha/Beta - Oct 2022-Jun 24 2023<br>
+            - Simple game<br>
+            - Too many bugs<br>
+            <p></p>
+            v1.000 - Jun 25 2023<br>
+            - 7 builds.<br>
+            - Stats menu.<br>
+            - Better graphics.<br>
+            - New button texture.<br>
+            <p></p>
+            v1.001 - Jun 27 2023<br>
+            - Added planets.<br>
+            <p></p>
+            v1.002 - Jun 28 2023<br>
+            - Added robots.<br>
+            - Added click image before prices.<br>
+        </div>
+    <div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&&notification.length>0&&null!=mainContent && new Date().toISOString().slice(0, 10) > '2022-10-01' && new Date().toISOString().slice(0, 10) < '2022-12-25'){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Go for it</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="Black Friday Prices",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase;');var h2Tag=document.createElement("H2");h2Tag.innerHTML="Get 90% Off!",h2Tag.setAttribute("style",'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="Get Web Hosting for $0.99/month + SSL Certificate for FREE!",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 15px;');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/bf-2020-wp-inject-img.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}else if(null!=wordpressAdminBody&&notification.length>0&&null!=mainContent){var bulletPoints = mainContent.getElementsByTagName('li');var replacement=['Increased performance (up to 5x faster) - Thanks to Hostinger’s WordPress Acceleration and Caching solutions','WordPress AI tools - Creating a new website has never been easier','Weekly or daily backups - Your data will always be safe','Fast and dedicated 24/7 support - Ready to help you','Migration of your current WordPress sites to Hostinger is automatic and free!','Try Premium Web Hosting now - starting from $1.99/mo'];for (var i=0;i<bulletPoints.length;i++){bulletPoints[i].innerHTML = replacement[i];}}</script></body>
+    <script>
+        // Stats
+        var clicks = 0;
+        var clicksTotal = 0;
+        var buttonClicks = 0;
+        var selfMade = 0;
+        var buildMade = 0;
+        var cps = 0;
+        var startingClickPower = 1;
+        var clickPower = startingClickPower;
+
+        // Builds
+        var autoclickerPrice = 15;
+        var autoclickerLevel = 0;
+        var autoclickerCps = 0.1;
+        var fistPrice = 100;
+        var fistLevel = 0;
+        var fistCps = 1;
+        var friendPrice = 1100;
+        var friendLevel = 0;
+        var friendCps = 8;
+        var lightningPrice = 12000;
+        var lightningLevel = 0;
+        var lightningCps = 47;
+        var wizardPrice = 130000;
+        var wizardLevel = 0;
+        var wizardCps = 260;
+        var timeMachinePrice = 1400000;
+        var timeMachineLevel = 0;
+        var timeMachineCps = 1400;
+        var portalPrice = 20000000;
+        var portalLevel = 0;
+        var portalCps = 7800;
+        var planetPrice = 330000000;
+        var planetLevel = 0;
+        var planetCps = 44000;
+        var robotPrice = 5100000000;
+        var robotLevel = 0;
+        var robotCps = 260000;
+
+        // Upgrades
+        var buttonUpgradePrice = 100;
+        var buttonUpgradeLevel = 0;
+
+        // Achivements
+        var humbleBeginnings = false;
+        var tookAWhile = false;
+        var awesomeClicker = false;
+        var busyClicker = false;
+        var myFingersHurt = false;
+        var howLongHaveYouBeenPlaying = false;
+        var click = false;
+        var clickClick = false;
+        var clicketyClick = false;
+        var clabraCladabraClalakzam = false;
+        var punch = false;
+        var ouchThatHurts = false;
+        var buttonNearlyBroken = false;
+        var buyingAPc = false;
+        var brokenMice = false;
+        var pcsAreExpensive = false;
+        var grayClouds = false;
+        var iCantFallAsleep = false;
+        var momICantSeeItsTooYellow = false;
+        var magic = false;
+        var oopsIStruckAHuman = false;
+        var hogwarts = false;
+        var timeTravel = false;
+        var vacationInThePast = false;
+        var theFutureHasMoreClicks = false;
+        var aNewDimension = false;
+        var creepyOuterdimensionalMonsters = false;
+        var anotherTravelMethod = false;
+        var clickPlanet = false;
+        var theyAreTakingUpTooMuchSpace = false;
+        var clickGalaxy = false;
+        var beep = false;
+        var boop = false;
+        var beepBoop = false;
+
+        function addClick(num) {
+            clicks += num;
+            clicksTotal += num;
+            buttonClicks += 1;
+            selfMade += num;
+            document.getElementById("click-num").innerHTML = Math.round(clicks);
+        }
+
+        setInterval(function () {
+            clicks += autoclickerLevel * autoclickerCps;
+            clicks += fistLevel * fistCps;
+            clicks += friendLevel * friendCps;
+            clicks += lightningLevel * lightningCps;
+            clicks += wizardLevel * wizardCps;
+            clicks += timeMachineLevel * timeMachineCps;
+            clicks += portalLevel * portalCps;
+            
+            clicksTotal += autoclickerLevel * autoclickerCps;
+            clicksTotal += fistLevel * fistCps;
+            clicksTotal += friendLevel * friendCps;
+            clicksTotal += lightningLevel * lightningCps;
+            clicksTotal += wizardLevel * wizardCps;
+            clicksTotal += timeMachineLevel * timeMachineCps;
+            clicksTotal += portalLevel * portalCps;
+            
+            buildMade += autoclickerLevel * autoclickerCps;
+            buildMade += fistLevel * fistCps;
+            buildMade += friendLevel * friendCps;
+            buildMade += lightningLevel * lightningCps;
+            buildMade += wizardLevel * wizardCps;
+            buildMade += timeMachineLevel * timeMachineCps;
+            buildMade += portalLevel * portalCps;
+            document.getElementById("click-num").innerHTML = Math.round(clicks);
+
+            document.title =
+                Math.round(clicks) +
+                " clicks - Click the Button - Algfish31.com";
+
+            document.getElementById("stats-clicks").innerHTML =
+                Math.round(clicks);
+            document.getElementById("stats-clicks-all-time").innerHTML =
+                Math.round(clicksTotal);
+            document.getElementById("stats-builds-owned").innerHTML =
+                autoclickerLevel +
+                fistLevel +
+                friendLevel +
+                lightningLevel +
+                wizardLevel +
+                timeMachineLevel +
+                portalLevel;
+            document.getElementById("stats-clicks-per-second").innerHTML =
+                Math.round(cps * 100) / 100;
+            document.getElementById("stats-clicks-per-click").innerHTML =
+                Math.round(clickPower);
+            document.getElementById("stats-button-clicks").innerHTML =
+                Math.round(buttonClicks);
+            document.getElementById("stats-self-made-clicks").innerHTML =
+                Math.round(selfMade);
+            document.getElementById("stats-build-made-clicks").innerHTML =
+                Math.round(buildMade);
+                
+            document.getElementById("current-world-text").innerHTML = " - Current World: " + currentWorld;
+            
+            // Achivements
+            if (clicksTotal > 0) {
+                if (humbleBeginnings == false) {
+                    humbleBeginnings = true;
+                    document.getElementById("notification-text").innerHTML = "Humble Beginnings";
+                    document.getElementById("notification-description-text").innerHTML = "Get 1 click.";
+                    document.getElementById("humble-beginnings-text").innerHTML = "Humble Beginnings";
+                    document.getElementById("humble-beginnings-description-text").innerHTML = "Get 1 click.";
+                }
+            }
+            if (clicksTotal > 999) {
+                if (tookAWhile == false) {
+                    tookAWhile = true;
+                    document.getElementById("notification-text").innerHTML = "Took A While";
+                    document.getElementById("notification-description-text").innerHTML = "Get 1000 clicks.";
+                    document.getElementById("took-a-while-text").innerHTML = "Took a While";
+                    document.getElementById("took-a-while-description-text").innerHTML = "Get 1000 clicks.";
+                }
+            }
+            if (clicksTotal > 999999) {
+                if (awesomeClicker == false) {
+                    awesomeClicker = true;
+                    document.getElementById("notification-text").innerHTML = "Awesome Clicker";
+                    document.getElementById("notification-description-text").innerHTML = "Get 1000000 clicks.";
+                    document.getElementById("awesome-clicker-text").innerHTML = "Awesome Clicker";
+                    document.getElementById("awesome-clicker-description-text").innerHTML = "Get 1000000 clicks.";
+                }
+            }
+            if (buttonClicks > 999) {
+                if (busyClicker == false) {
+                    busyClicker = true;
+                    document.getElementById("notification-text").innerHTML = "Busy Clicker";
+                    document.getElementById("notification-description-text").innerHTML = "Click 1000 times.";
+                    document.getElementById("busy-clicker-text").innerHTML = "Busy Clicker";
+                    document.getElementById("busy-clicker-description-text").innerHTML = "Click 1000 times.";
+                }
+            }
+            if (buttonClicks > 99999) {
+                if (myFingersHurt == false) {
+                    myFingersHurt = true;
+                    document.getElementById("notification-text").innerHTML = "My Fingers Hurt";
+                    document.getElementById("notification-description-text").innerHTML = "Click 100000 times.";
+                    document.getElementById("my-fingers-hurt-text").innerHTML = "My Fingers Hurt";
+                    document.getElementById("my-fingers-hurt-description-text").innerHTML = "Click 100000 times.";
+                }
+            }
+            if (buttonClicks > 999999) {
+                if (howLongHaveYouBeenPlaying == false) {
+                    howLongHaveYouBeenPlaying = true;
+                    document.getElementById("notification-text").innerHTML = "How Long Have You Been Playing!?!";
+                    document.getElementById("notification-description-text").innerHTML = "Click 1000000 times.";
+                    document.getElementById("how-long-have-you-been-playing-text").innerHTML = "How Long Have You Been Playing!?!";
+                    document.getElementById("how-long-have-you-been-playing-description-text").innerHTML = "Click 1000000 times.";
+                }
+            }
+            if (autoclickerLevel > 0) {
+                if (click == false) {
+                    click = true;
+                    document.getElementById("notification-text").innerHTML = "Click";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 autoclicker.";
+                    document.getElementById("click-text").innerHTML = "Click";
+                    document.getElementById("click-description-text").innerHTML = "Have 1 autoclicker.";
+                }
+            }
+            if (autoclickerLevel > 1) {
+                if (clickClick == false) {
+                    clickClick = true;
+                    document.getElementById("notification-text").innerHTML = "Click Click";
+                    document.getElementById("notification-description-text").innerHTML = "Have 2 autoclickers.";
+                    document.getElementById("click-click-text").innerHTML = "Click Click";
+                    document.getElementById("click-click-description-text").innerHTML = "Have 2 autoclickers.";
+                }
+            }
+            if (autoclickerLevel > 9) {
+                if (clicketyClick == false) {
+                    clicketyClick = true;
+                    document.getElementById("notification-text").innerHTML = "Clickety Click";
+                    document.getElementById("notification-description-text").innerHTML = "Have 10 autoclickers.";
+                    document.getElementById("clickety-click-text").innerHTML = "Clickety Click";
+                    document.getElementById("clickety-click-description-text").innerHTML = "Have 10 autoclickers.";
+                }
+            }
+            if (autoclickerLevel > 99) {
+                if (clabraCladabraClalakzam == false) {
+                    clabraCladabraClalakzam = true;
+                    document.getElementById("notification-text").innerHTML = "Clabra Cladabra Clalakzam";
+                    document.getElementById("notification-description-text").innerHTML = "Have 100 autoclickers.";
+                    document.getElementById("clabra-cladabra-clalakzam-text").innerHTML = "Clabra Cladabra Clalakzam";
+                    document.getElementById("clabra-cladabra-clalakzam-description-text").innerHTML = "Have 100 autoclickers.";
+                }
+            }
+            if (fistLevel > 0) {
+                if (punch == false) {
+                    punch = true;
+                    document.getElementById("notification-text").innerHTML = "Punch";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 fist.";
+                    document.getElementById("punch-text").innerHTML = "Punch";
+                    document.getElementById("punch-description-text").innerHTML = "Have 1 fist.";
+                }
+            }
+            if (fistLevel > 9) {
+                if (ouchThatHurts == false) {
+                    ouchThatHurts = true;
+                    document.getElementById("notification-text").innerHTML = "Ouch! That hurts";
+                    document.getElementById("notification-description-text").innerHTML = "Have 10 fists.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Ouch! That hurts";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 fists.";
+                }
+            }
+            if (fistLevel > 99) {
+                if (buttonNearlyBroken == false) {
+                    buttonNearlyBroken = true;
+                    document.getElementById("notification-text").innerHTML = "Button. Nearly. Broken.";
+                    document.getElementById("notification-description-text").innerHTML = "Have 100 fists.";
+                    document.getElementById("button-nearly-broken-text").innerHTML = "Button. Nearly. Broken.";
+                    document.getElementById("button-nearly-broken-description-text").innerHTML = "Have 100 fists.";
+                }
+            }
+            if (friendLevel > 0) {
+                if (buyingAPc == false) {
+                    buyingAPc = true;
+                    document.getElementById("notification-text").innerHTML = "Buying a PC";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 friend.";
+                    document.getElementById("buying-a-pc-text").innerHTML = "Buying a PC";
+                    document.getElementById("buying-a-pc-description-text").innerHTML = "Have 1 friend.";
+                }
+            }
+            if (friendLevel > 9) {
+                if (brokenMice == false) {
+                    brokenMice = true;
+                    document.getElementById("notification-text").innerHTML = "Broken Mice";
+                    document.getElementById("notification-description-text").innerHTML = "Have 10 friends.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Broken Mice";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 friends.";
+                }
+            }
+            if (friendLevel > 99) {
+                if (pcsAreExpensive == false) {
+                    pcsAreExpensive = true;
+                    document.getElementById("notification-text").innerHTML = "PCs are Expensive";
+                    document.getElementById("notification-description-text").innerHTML = "Have 100 friends.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "PCs are Expensive";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 friends.";
+                }
+            }
+            if (lightningLevel > 0) {
+                if (grayClouds == false) {
+                    grayClouds = true;
+                    document.getElementById("notification-text").innerHTML = "Gray Clouds";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 lightning.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Gray Clouds";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 1 lightning.";
+                }
+            }
+            if (lightningLevel > 9) {
+                if (iCantFallAsleep == false) {
+                    iCantFallAsleep = true;
+                    document.getElementById("notification-text").innerHTML = "I Can't Fall Asleep";
+                    document.getElementById("notification-description-text").innerHTML = "Have 10 lightnings.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "I Can't Fall Asleep";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 lightnings.";
+                }
+            }
+            if (lightningLevel > 99) {
+                if (momICantSeeItsTooYellow == false) {
+                    momICantSeeItsTooYellow = true;
+                    document.getElementById("notification-text").innerHTML = "Mom! I Can't See!";
+                    document.getElementById("notification-description-text").innerHTML = "Have 100 lightnings.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See!";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                }
+            }
+            if (wizardLevel > 0) {
+                if (magic == false) {
+                    magic = true;
+                    document.getElementById("notification-text").innerHTML = "Magic";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 wizard.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See! It's too Yellow";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                }
+            }
+            if (wizardLevel > 9) {
+                if (oopsIStruckAHuman == false) {
+                    oopsIStruckAHuman = true;
+                    document.getElementById("notification-text").innerHTML = "Oops, I struck a human.";
+                    document.getElementById("notification-description-text").innerHTML = "Have 10 wizards.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Oops. I struck a human.";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 wizards.";
+                }
+            }
+            if (wizardLevel > 99) {
+                if (magic == false) {
+                    magic = true;
+                    document.getElementById("notification-text").innerHTML = "Magic";
+                    document.getElementById("notification-description-text").innerHTML = "Have 1 wizard.";
+                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See! It's too Yellow";
+                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                }
+            }
+        }, 1000);
+
+        // Builds
+
+        function buyAutoclicker() {
+            if (clicks >= autoclickerPrice) {
+                clicks = clicks - autoclickerPrice;
+                autoclickerLevel += 1;
+                autoclickerPrice = autoclickerPrice * 1.15;
+                cps += autoclickerCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("autoclicker-price").innerHTML =
+                    Math.round(autoclickerPrice);
+                document.getElementById("autoclicker-level").innerHTML =
+                    Math.round(autoclickerLevel);
+            }
+        }
+
+        function buyFist() {
+            if (clicks >= fistPrice) {
+                clicks = clicks - fistPrice;
+                fistLevel += 1;
+                fistPrice = fistPrice * 1.15;
+                cps += fistCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("fist-price").innerHTML =
+                    Math.round(fistPrice);
+                document.getElementById("fist-level").innerHTML =
+                    Math.round(fistLevel);
+            }
+        }
+        function buyFriend() {
+            if (clicks >= friendPrice) {
+                clicks = clicks - friendPrice;
+                friendLevel += 1;
+                friendPrice = friendPrice * 1.15;
+                cps += friendCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("friend-price").innerHTML =
+                    Math.round(friendPrice);
+                document.getElementById("friend-level").innerHTML =
+                    Math.round(friendLevel);
+            }
+        }
+
+        function buyLightning() {
+            if (clicks >= lightningPrice) {
+                clicks = clicks - lightningPrice;
+                lightningLevel += 1;
+                lightningPrice = lightningPrice * 1.15;
+                cps += lightningCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("lightning-price").innerHTML =
+                    Math.round(lightningPrice);
+                document.getElementById("lightning-level").innerHTML =
+                    Math.round(lightningLevel);
+            }
+        }
+        function buyWizard() {
+            if (clicks >= wizardPrice) {
+                clicks = clicks - wizardPrice;
+                wizardLevel += 1;
+                wizardPrice = wizardPrice * 1.15;
+                cps += wizardCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("wizard-price").innerHTML =
+                    Math.round(wizardPrice);
+                document.getElementById("wizard-level").innerHTML =
+                    Math.round(wizardLevel);
+            }
+        }
+
+        function buyTimeMachine() {
+            if (clicks >= timeMachinePrice) {
+                clicks = clicks - timeMachinePrice;
+                timeMachineLevel += 1;
+                timeMachinePrice = timeMachinePrice * 1.15;
+                cps += timeMachineCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("time-machine-price").innerHTML =
+                    Math.round(timeMachinePrice);
+                document.getElementById("time-machine-level").innerHTML =
+                    Math.round(timeMachineLevel);
+            }
+        }
+
+        function buyPortal() {
+            if (clicks >= portalPrice) {
+                clicks = clicks - portalPrice;
+                portalLevel += 1;
+                portalPrice = portalPrice * 1.15;
+                cps += portalCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("portal-price").innerHTML =
+                    Math.round(portalPrice);
+                document.getElementById("portal-level").innerHTML =
+                    Math.round(portalLevel);
+            }
+        }
+
+        function buyPlanet() {
+            if (clicks >= planetPrice) {
+                clicks = clicks - planetPrice;
+                planetLevel += 1;
+                planetPrice = planetPrice * 1.15;
+                cps += planetCps;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("planet-price").innerHTML =
+                    Math.round(planetPrice);
+                document.getElementById("planet-level").innerHTML =
+                    Math.round(planetLevel);
+            }
+        }
+
+        function buyRobot() {
+            if (clicks >= robotPrice) {
+                clicks = clicks - robotPrice;
+                robotLevel += 1;
+                robotPrice = robotPrice * 1.15;
+                cps += robotCps;
+                document.getElementById("click-num").innerHTML = Math.round(clicks);
+                document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+                document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
+                document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
+            }
+        }
+
+        // Upgrades
+
+        function buyButtonUpgrade() {
+            if (clicks >= buttonUpgradePrice) {
+                clicks = clicks - buttonUpgradePrice;
+                buttonUpgradeLevel += 1;
+                buttonUpgradePrice = buttonUpgradePrice * 2;
+                clickPower += 1;
+                document.getElementById("click-num").innerHTML =
+                    Math.round(clicks);
+                document.getElementById("cps-num").innerHTML =
+                    Math.round(cps * 100) / 100;
+                document.getElementById("button-upgrade-price").innerHTML = Math.round(buttonUpgradePrice);
+                document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
+            }
+        }
+
+        // Saving
+
+        function saveGame() {
+            var gameSave = {
+                clicks: clicks,
+                clicksTotal: clicksTotal,
+                buttonClicks: buttonClicks,
+                selfMade: selfMade,
+                buildMade: buildMade,
+                clickPower: clickPower,
+                startingClickPower: startingClickPower,
+                autoclickerPrice: autoclickerPrice,
+                autoclickerLevel: autoclickerLevel,
+                autoclickerCps: autoclickerCps,
+                fistPrice: fistPrice,
+                fistLevel: fistLevel,
+                fistCps: fistCps,
+                friendPrice: friendPrice,
+                friendLevel: friendLevel,
+                friendCps: friendCps,
+                lightningPrice: lightningPrice,
+                lightningLevel: lightningLevel,
+                lightningCps: lightningCps,
+                wizardPrice: wizardPrice,
+                wizardLevel: wizardLevel,
+                wizardCps: wizardCps,
+                timeMachinePrice: timeMachinePrice,
+                timeMachineLevel: timeMachineLevel,
+                timeMachineCps: timeMachineCps,
+                portalPrice: portalPrice,
+                portalLevel: portalLevel,
+                portalCps: portalCps,
+                planetPrice: planetPrice,
+                planetLevel: planetLevel,
+                planetCps: planetCps,
+                robotPrice: robotPrice,
+                robottLevel: robotLevel,
+                robotCps: robotCps,
+                buttonUpgradePrice: buttonUpgradePrice,
+                buttonUpgradeLevel: buttonUpgradeLevel
+            };
+            localStorage.setItem("gameSave", JSON.stringify(gameSave));
+        }
+
+        function loadGame() {
+            var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+            if (typeof savedGame.clicks !== "undefined") clicks = savedGame.clicks;
+            if (typeof savedGame.clicksTotal !== "undefined") clicksTotal = savedGame.clicksTotal;
+            if (typeof savedGame.buttonClicks !== "undefined") buttonClicks = savedGame.buttonClicks;
+            if (typeof savedGame.selfMade !== "undefined") selfMade = savedGame.selfMade;
+            if (typeof savedGame.buildMade !== "undefined") buildMade = savedGame.buildMade;
+            if (typeof savedGame.clickPower !== "undefined") clickPower = savedGame.clickPower;
+            if (typeof savedGame.startingClickPower !== "undefined") startingClickPower = savedGame.startingClickPower;
+            if (typeof savedGame.autoclickerPrice !== "undefined") autoclickerPrice = savedGame.autoclickerPrice;
+            if (typeof savedGame.autoclickerLevel !== "undefined") autoclickerLevel = savedGame.autoclickerLevel;
+            if (typeof savedGame.autoclickerCps !== "undefined") autoclickerCps = savedGame.autoclickerCps;
+            if (typeof savedGame.fistPrice !== "undefined") fistPrice = savedGame.fistPrice;
+            if (typeof savedGame.fistLevel !== "undefined") fistLevel = savedGame.fistLevel;
+            if (typeof savedGame.fistCps !== "undefined") fistCps = savedGame.fistCps;
+            if (typeof savedGame.friendPrice !== "undefined") friendPrice = savedGame.friendPrice;
+            if (typeof savedGame.friendLevel !== "undefined") friendLevel = savedGame.friendLevel;
+            if (typeof savedGame.friendCps !== "undefined") friendCps = savedGame.friendCps;
+            if (typeof savedGame.lightningPrice !== "undefined") lightningPrice = savedGame.lightningPrice;
+            if (typeof savedGame.lightningLevel !== "undefined") lightningLevel = savedGame.lightningLevel;
+            if (typeof savedGame.lightningCps !== "undefined") lightningCps = savedGame.lightningCps;
+            if (typeof savedGame.wizardPrice !== "undefined") wizardPrice = savedGame.wizardPrice;
+            if (typeof savedGame.wizardLevel !== "undefined") wizardLevel = savedGame.wizardLevel;
+            if (typeof savedGame.wizardCps !== "undefined") wizardCps = savedGame.wizardCps;
+            if (typeof savedGame.timeMachinePrice !== "undefined") timeMachinePrice = savedGame.timeMachinePrice;
+            if (typeof savedGame.timeMachineLevel !== "undefined") timeMachineLevel = savedGame.timeMachineLevel;
+            if (typeof savedGame.timeMachineCps !== "undefined") timeMachineCps = savedGame.timeMachineCps;
+            if (typeof savedGame.portalPrice !== "undefined") portalPrice = savedGame.portalPrice;
+            if (typeof savedGame.portalLevel !== "undefined") portalLevel = savedGame.portalLevel;
+            if (typeof savedGame.portalCps !== "undefined") portalCps = savedGame.portalCps;
+            if (typeof savedGame.planetPrice !== "undefined") planetPrice = savedGame.planetPrice;
+            if (typeof savedGame.planetLevel !== "undefined") planetLevel = savedGame.planetLevel;
+            if (typeof savedGame.planetCps !== "undefined") planetCps = savedGame.planetCps;
+            if (typeof savedGame.robotPrice !== "undefined") robotPrice = savedGame.robotPrice;
+            if (typeof savedGame.robotLevel !== "undefined") robotLevel = savedGame.robotLevel;
+            if (typeof savedGame.robotCps !== "undefined") robotCps = savedGame.robotCps;
+            if (typeof savedGame.buttonUpgradePrice !== "undefined") buttonUpgradePrice = savedGame.buttonUpgradePrice;
+            if (typeof savedGame.buttonUpgradeLevel !== "undefined") buttonUpgradeLevel = savedGame.buttonUpgradeLevel;
+            cps = autoclickerLevel * autoclickerCps + fistLevel * fistCps + friendLevel * friendCps + lightningLevel * lightningCps + wizardLevel * wizardCps + timeMachineLevel * timeMachineCps + portalLevel * portalCps + planetLevel * planetCps + robotLevel * robotCps;
+            document.getElementById("click-num").innerHTML = Math.round(clicks);
+            document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+            document.getElementById("autoclicker-price").innerHTML = Math.round(autoclickerPrice);
+            document.getElementById("autoclicker-level").innerHTML = Math.round(autoclickerLevel);
+            document.getElementById("fist-price").innerHTML = Math.round(fistPrice);
+            document.getElementById("fist-level").innerHTML = Math.round(fistLevel);
+            document.getElementById("friend-price").innerHTML = Math.round(friendPrice);
+            document.getElementById("friend-level").innerHTML = Math.round(friendLevel);
+            document.getElementById("lightning-price").innerHTML = Math.round(lightningPrice);
+            document.getElementById("lightning-level").innerHTML = Math.round(lightningLevel);
+            document.getElementById("wizard-price").innerHTML = Math.round(wizardPrice);
+            document.getElementById("wizard-level").innerHTML = Math.round(wizardLevel);
+            document.getElementById("time-machine-price").innerHTML = Math.round(timeMachinePrice);
+            document.getElementById("time-machine-level").innerHTML = Math.round(timeMachineLevel);
+            document.getElementById("portal-price").innerHTML = Math.round(portalPrice);
+            document.getElementById("portal-level").innerHTML = Math.round(portalLevel);
+            document.getElementById("planet-price").innerHTML = Math.round(planetPrice);
+            document.getElementById("planet-level").innerHTML = Math.round(planetLevel);
+            document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
+            document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
+            document.getElementById("button-upgrade-price").innerHTML = Math.round(buttonUpgradePrice);
+            document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
+        }
+
+        setInterval(function () {
+            saveGame();
+        }, 1000);
+
+        window.onload = function () {
+            loadGame();
+        };
+    </script>
+</html>
