@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algfish31.com - Home</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: "Neue Pixel Sans", monospace, sans-serif;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9J2GNBLD1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N9J2GNBLD1');
+</script>
+<body>
+    <h1>Algfish31.com</h1>
+    <p>Select a game from below</p>
+    <ul>
+        <lr>
+            <li><a href="click-the-button.php">Click the Button</a> -- Total Clicks Earnt: <span id="current-ctb-clicks">0</span></li>
+        </lr>
+    </ul>
+</body>
+<script>
+    var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+    document.getElementById("current-ctb-clicks").innerHTML = Math.round(savedGame.clicksTotal);
+</script>
+</html>
