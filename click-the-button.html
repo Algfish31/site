@@ -659,8 +659,8 @@
                     brokenMice = true;
                     document.getElementById("notification-text").innerHTML = "Broken Mice";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 friends.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Broken Mice";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 friends.";
+                    document.getElementById("broken-mice-text").innerHTML = "Broken Mice";
+                    document.getElementById("broken-mice-description-text").innerHTML = "Have 10 friends.";
                 }
             }
             if (friendLevel > 99) {
@@ -668,8 +668,8 @@
                     pcsAreExpensive = true;
                     document.getElementById("notification-text").innerHTML = "PCs are Expensive";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 friends.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "PCs are Expensive";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 friends.";
+                    document.getElementById("pcs-are-expensive-text").innerHTML = "PCs are Expensive";
+                    document.getElementById("pcs-are-expensive-description-text").innerHTML = "Have 100 friends.";
                 }
             }
             if (lightningLevel > 0) {
@@ -677,8 +677,8 @@
                     grayClouds = true;
                     document.getElementById("notification-text").innerHTML = "Gray Clouds";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 lightning.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Gray Clouds";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 1 lightning.";
+                    document.getElementById("gray-clouds-text").innerHTML = "Gray Clouds";
+                    document.getElementById("gray-clouds-description-text").innerHTML = "Have 1 lightning.";
                 }
             }
             if (lightningLevel > 9) {
@@ -686,8 +686,8 @@
                     iCantFallAsleep = true;
                     document.getElementById("notification-text").innerHTML = "I Can't Fall Asleep";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 lightnings.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "I Can't Fall Asleep";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 lightnings.";
+                    document.getElementById("i-cant-fall-asleep-text").innerHTML = "I Can't Fall Asleep";
+                    document.getElementById("i-cant-fall-asleep-description-text").innerHTML = "Have 10 lightnings.";
                 }
             }
             if (lightningLevel > 99) {
@@ -695,8 +695,8 @@
                     momICantSeeItsTooYellow = true;
                     document.getElementById("notification-text").innerHTML = "Mom! I Can't See!";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 lightnings.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See!";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                    document.getElementById("mom-i-cant-see-its-too-yellow-text").innerHTML = "Mom! I Can't See!";
+                    document.getElementById("mom-i-cant-see-its-too-yellow-description-text").innerHTML = "Have 100 lightnings.";
                 }
             }
             if (wizardLevel > 0) {
@@ -704,8 +704,8 @@
                     magic = true;
                     document.getElementById("notification-text").innerHTML = "Magic";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 wizard.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See! It's too Yellow";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                    document.getElementById("magic-text").innerHTML = "Mom! I Can't See! It's too Yellow";
+                    document.getElementById("magic-description-text").innerHTML = "Have 100 lightnings.";
                 }
             }
             if (wizardLevel > 9) {
@@ -713,17 +713,17 @@
                     oopsIStruckAHuman = true;
                     document.getElementById("notification-text").innerHTML = "Oops, I struck a human.";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 wizards.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Oops. I struck a human.";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 10 wizards.";
+                    document.getElementById("oops-i-struck-a-human-text").innerHTML = "Oops. I struck a human.";
+                    document.getElementById("oops-i-struck-a-human-description-text").innerHTML = "Have 10 wizards.";
                 }
             }
             if (wizardLevel > 99) {
-                if (magic == false) {
-                    magic = true;
-                    document.getElementById("notification-text").innerHTML = "Magic";
-                    document.getElementById("notification-description-text").innerHTML = "Have 1 wizard.";
-                    document.getElementById("ouch-that-hurts-text").innerHTML = "Mom! I Can't See! It's too Yellow";
-                    document.getElementById("ouch-that-hurts-description-text").innerHTML = "Have 100 lightnings.";
+                if (hogwarts == false) {
+                    hogwarts = true;
+                    document.getElementById("notification-text").innerHTML = "Hogwarts";
+                    document.getElementById("notification-description-text").innerHTML = "Have 100 wizards.";
+                    document.getElementById("hogwarts-text").innerHTML = "Hogwarts";
+                    document.getElementById("hogwarts-description-text").innerHTML = "Have 100 wizards.";
                 }
             }
         }, 1000);
