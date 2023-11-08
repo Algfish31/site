@@ -239,7 +239,7 @@
         </div>
         <br>
         <div class="achievements" id="achivements">
-            <h3>Achievements</h3>
+            <h3>Achievements (<span id="num-achievements-text">0</span>/35</h3>
             <span id="humble-beginnings-text">???</span><br>
             <span id="humble-beginnings-description-text" style="font-size: 12px;"></span><br>
             <p></p>
@@ -424,6 +424,7 @@
         var cps = 0;
         var startingClickPower = 1;
         var clickPower = startingClickPower;
+        var numAchievements = 0;
 
         // Builds
         var autoclickerPrice = 15;
@@ -556,9 +557,13 @@
                 Math.round(buildMade);
             
             // Achivements
+
+            document.getElementById("num-achievements-text").innerHTML = numAchievements;
+            
             if (clicksTotal > 0) {
                 if (humbleBeginnings == false) {
                     humbleBeginnings = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Humble Beginnings";
                     document.getElementById("notification-description-text").innerHTML = "Get 1 click.";
                     document.getElementById("humble-beginnings-text").innerHTML = "Humble Beginnings";
@@ -568,6 +573,7 @@
             if (clicksTotal > 999) {
                 if (tookAWhile == false) {
                     tookAWhile = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Took A While";
                     document.getElementById("notification-description-text").innerHTML = "Get 1000 clicks.";
                     document.getElementById("took-a-while-text").innerHTML = "Took a While";
@@ -577,6 +583,7 @@
             if (clicksTotal > 999999) {
                 if (awesomeClicker == false) {
                     awesomeClicker = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Awesome Clicker";
                     document.getElementById("notification-description-text").innerHTML = "Get 1000000 clicks.";
                     document.getElementById("awesome-clicker-text").innerHTML = "Awesome Clicker";
@@ -586,6 +593,7 @@
             if (buttonClicks > 999) {
                 if (busyClicker == false) {
                     busyClicker = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Busy Clicker";
                     document.getElementById("notification-description-text").innerHTML = "Click 1000 times.";
                     document.getElementById("busy-clicker-text").innerHTML = "Busy Clicker";
@@ -595,6 +603,7 @@
             if (buttonClicks > 99999) {
                 if (myFingersHurt == false) {
                     myFingersHurt = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "My Fingers Hurt";
                     document.getElementById("notification-description-text").innerHTML = "Click 100000 times.";
                     document.getElementById("my-fingers-hurt-text").innerHTML = "My Fingers Hurt";
@@ -604,6 +613,7 @@
             if (buttonClicks > 999999) {
                 if (howLongHaveYouBeenPlaying == false) {
                     howLongHaveYouBeenPlaying = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "How Long Have You Been Playing!?!";
                     document.getElementById("notification-description-text").innerHTML = "Click 1000000 times.";
                     document.getElementById("how-long-have-you-been-playing-text").innerHTML = "How Long Have You Been Playing!?!";
@@ -613,6 +623,7 @@
             if (autoclickerLevel > 0) {
                 if (click == false) {
                     click = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Click";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 autoclicker.";
                     document.getElementById("click-text").innerHTML = "Click";
@@ -622,6 +633,7 @@
             if (autoclickerLevel > 1) {
                 if (clickClick == false) {
                     clickClick = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Click Click";
                     document.getElementById("notification-description-text").innerHTML = "Have 2 autoclickers.";
                     document.getElementById("click-click-text").innerHTML = "Click Click";
@@ -631,6 +643,7 @@
             if (autoclickerLevel > 9) {
                 if (clicketyClick == false) {
                     clicketyClick = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Clickety Click";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 autoclickers.";
                     document.getElementById("clickety-click-text").innerHTML = "Clickety Click";
@@ -640,6 +653,7 @@
             if (autoclickerLevel > 99) {
                 if (clabraCladabraClalakzam == false) {
                     clabraCladabraClalakzam = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Clabra Cladabra Clalakzam";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 autoclickers.";
                     document.getElementById("clabra-cladabra-clalakzam-text").innerHTML = "Clabra Cladabra Clalakzam";
@@ -649,6 +663,7 @@
             if (fistLevel > 0) {
                 if (punch == false) {
                     punch = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Punch";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 fist.";
                     document.getElementById("punch-text").innerHTML = "Punch";
@@ -658,6 +673,7 @@
             if (fistLevel > 9) {
                 if (ouchThatHurts == false) {
                     ouchThatHurts = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Ouch! That hurts";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 fists.";
                     document.getElementById("ouch-that-hurts-text").innerHTML = "Ouch! That hurts";
@@ -667,6 +683,7 @@
             if (fistLevel > 99) {
                 if (buttonNearlyBroken == false) {
                     buttonNearlyBroken = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Button. Nearly. Broken.";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 fists.";
                     document.getElementById("button-nearly-broken-text").innerHTML = "Button. Nearly. Broken.";
@@ -676,6 +693,7 @@
             if (friendLevel > 0) {
                 if (buyingAPc == false) {
                     buyingAPc = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Buying a PC";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 friend.";
                     document.getElementById("buying-a-pc-text").innerHTML = "Buying a PC";
@@ -685,6 +703,7 @@
             if (friendLevel > 9) {
                 if (brokenMice == false) {
                     brokenMice = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Broken Mice";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 friends.";
                     document.getElementById("broken-mice-text").innerHTML = "Broken Mice";
@@ -694,6 +713,7 @@
             if (friendLevel > 99) {
                 if (pcsAreExpensive == false) {
                     pcsAreExpensive = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "PCs are Expensive";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 friends.";
                     document.getElementById("pcs-are-expensive-text").innerHTML = "PCs are Expensive";
@@ -703,6 +723,7 @@
             if (lightningLevel > 0) {
                 if (grayClouds == false) {
                     grayClouds = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Gray Clouds";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 lightning.";
                     document.getElementById("gray-clouds-text").innerHTML = "Gray Clouds";
@@ -712,6 +733,7 @@
             if (lightningLevel > 9) {
                 if (iCantFallAsleep == false) {
                     iCantFallAsleep = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "I Can't Fall Asleep";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 lightnings.";
                     document.getElementById("i-cant-fall-asleep-text").innerHTML = "I Can't Fall Asleep";
@@ -721,6 +743,7 @@
             if (lightningLevel > 99) {
                 if (momICantSeeItsTooYellow == false) {
                     momICantSeeItsTooYellow = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Mom! I Can't See!";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 lightnings.";
                     document.getElementById("mom-i-cant-see-its-too-yellow-text").innerHTML = "Mom! I Can't See!";
@@ -730,6 +753,7 @@
             if (wizardLevel > 0) {
                 if (magic == false) {
                     magic = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Magic";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 wizard.";
                     document.getElementById("magic-text").innerHTML = "Magic";
@@ -739,6 +763,7 @@
             if (wizardLevel > 9) {
                 if (oopsIStruckAHuman == false) {
                     oopsIStruckAHuman = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Oops, I struck a human.";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 wizards.";
                     document.getElementById("oops-i-struck-a-human-text").innerHTML = "Oops. I struck a human.";
@@ -748,6 +773,7 @@
             if (wizardLevel > 99) {
                 if (hogwarts == false) {
                     hogwarts = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Hogwarts";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 wizards.";
                     document.getElementById("hogwarts-text").innerHTML = "Hogwarts";
@@ -757,6 +783,7 @@
             if (timeMachineLevel > 0) {
                 if (timeTravel == false) {
                     timeTravel = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Time Travel";
                     document.getElementById("notification-description-text").innerHTML = "Have 1 time machine.";
                     document.getElementById("hogwarts-text").innerHTML = "Time Travel";
@@ -766,15 +793,7 @@
             if (timeMachineLevel > 9) {
                 if (vacationInThePast == false) {
                     vacationInThePast = true;
-                    document.getElementById("notification-text").innerHTML = "Vacation in the Past";
-                    document.getElementById("notification-description-text").innerHTML = "Have 10 time machines.";
-                    document.getElementById("vacation-in-the-past-text").innerHTML = "Vacation In The Past";
-                    document.getElementById("vacation-in-the-past-description-text").innerHTML = "Have 10 time machines.";
-                }
-            }
-            if (timeMachineLevel > 9) {
-                if (vacationInThePast == false) {
-                    vacationInThePast = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Vacation in the Past";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 time machines.";
                     document.getElementById("vacation-in-the-past-text").innerHTML = "Vacation In The Past";
@@ -784,6 +803,7 @@
             if (timeMachineLevel > 99) {
                 if (theFutureHasMoreClicks == false) {
                     theFutureHasMoreClicks = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "The FUture Has More Clicks";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 time machines.";
                     document.getElementById("the-future-has-more-clicks-text").innerHTML = "The Future Has More Clicks";
@@ -793,6 +813,7 @@
 			if (portalLevel > 0) {
                 if (aNewDimension == false) {
                     aNewDimension = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "A New Dimension";
                     document.getElementById("notification-description-text").innerHTML = "Have a portal.";
                     document.getElementById("vacation-in-the-past-text").innerHTML = "A New Dimension";
@@ -802,6 +823,7 @@
 			if (portalLevel > 9) {
                 if (creepyOuterdimensionalMonsters == false) {
                     creepyOuterdimensionalMonsters = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Creepy Monsters";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 portals.";
                     document.getElementById("creepy-outerdimensional-monsters-text").innerHTML = "Creepy Monsters";
@@ -811,6 +833,7 @@
 			if (portalLevel > 99) {
                 if (anotherTravelMethod == false) {
                     anotherTravelMethod = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Another Travel Method";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 portals.";
                     document.getElementById("another-travel-method-text").innerHTML = "Another Travel Method";
@@ -820,6 +843,7 @@
 			if (planetLevel > 0) {
                 if (clickPlanet == false) {
                     clickPlanet = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Click Planet";
                     document.getElementById("notification-description-text").innerHTML = "Have a planet.";
                     document.getElementById("click-planet-text").innerHTML = "Click Planet";
@@ -829,6 +853,7 @@
 			if (planetLevel > 9) {
                 if (theyAreTakingUpTooMuchSpace == false) {
                     theyAreTakingUpTooMuchSpace = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "They're Taking up Too Much Space";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 planets.";
                     document.getElementById("they-are-taking-up-too-much-space-text").innerHTML = "They're Taking up Too Much Space";
@@ -838,6 +863,7 @@
 			if (planetLevel > 99) {
                 if (clickGalaxy == false) {
                     clickGalaxy = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Click Galaxy";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 planets.";
                     document.getElementById("click-galaxy-text").innerHTML = "Click Galaxy";
@@ -847,6 +873,7 @@
 			if (robotLevel > 0) {
                 if (beep == false) {
                     beep = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Beep";
                     document.getElementById("notification-description-text").innerHTML = "Have a robot.";
                     document.getElementById("beep-text").innerHTML = "Beep";
@@ -856,6 +883,7 @@
 			if (robotLevel > 9) {
                 if (boop == false) {
                     boop = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Boop";
                     document.getElementById("notification-description-text").innerHTML = "Have 10 robots.";
                     document.getElementById("boop-text").innerHTML = "Boop";
@@ -865,6 +893,7 @@
 			if (robotLevel > 99) {
                 if (beepBoop == false) {
                     beepBoop = true;
+                    numAchievements = numAchievements + 1;
                     document.getElementById("notification-text").innerHTML = "Beep Boop";
                     document.getElementById("notification-description-text").innerHTML = "Have 100 robots.";
                     document.getElementById("beep-boop-text").innerHTML = "Beep Boop";
