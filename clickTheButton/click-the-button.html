@@ -1,0 +1,455 @@
+<html>
+  <head>
+    <title>0 clicks - Click the Button - Algfish31.com</title>
+    <link rel="stylesheet" href="click-the-button.css" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-N9J2GNBLD1"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-N9J2GNBLD1");
+  </script>
+  <body>
+    <div class="section-left">
+      <div class="score-container">
+        <h1><span id="click-num">0</span> clicks</h1>
+        <h2><span id="cps-num">0</span> CPS</h2>
+      </div>
+      <div class="clicker-container">
+        <img
+          src="images/gray_button.png"
+          height="300px"
+          width="300px"
+          onclick="addClick(clickPower)"
+        />
+      </div>
+    </div>
+    <div id="section-right">
+      <span id="shop-type">NOTIFICATIONS</span><br />
+      <table class="shopButton" id="notification">
+        <tr>
+          <td id="nameAndPrice">
+            <h3 id="notification-text">Most Recent Achievement</h3>
+            <span id="notification-description-text" style="font-size: 12px"
+              >Description</span
+            >
+          </td>
+        </tr>
+      </table>
+      <h2 style="text-align: center; margin: auto">Shop</h2>
+      <span id="shop-type">UPGRADES</span><br />
+      <table class="shopButton" onclick="buyButtonUpgrade()">
+        <tr>
+          <td id="image">
+            <img src="images/humble-beginnings.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Button Upgrade</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="button-upgrade-price">100</span>
+            </p>
+          </td>
+          <td id="level"><span id="button-upgrade-level">0</span></td>
+        </tr>
+      </table>
+      <span id="shop-type">BUILDS</span>
+      <table
+        class="shopButton"
+        onclick="buyAutoClicker()"
+        id="autoclicker-button"
+      >
+        <tr>
+          <td id="image">
+            <img src="images/autoclicker.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Autoclicker</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="autoclicker-price">15</span>
+            </p>
+          </td>
+          <td id="level"><span id="autoclicker-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyFist()">
+        <tr>
+          <td id="image">
+            <img src="images/fist.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Fist</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="fist-price">100</span>
+            </p>
+          </td>
+          <td id="level"><span id="fist-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyFriend()">
+        <tr>
+          <td id="image">
+            <img src="images/friend.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Friend</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="friend-price">1100</span>
+            </p>
+          </td>
+          <td id="level"><span id="friend-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyLightning()">
+        <tr>
+          <td id="image">
+            <img src="images/lightning.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Lightning</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="lightning-price">12000</span>
+            </p>
+          </td>
+          <td id="level"><span id="lightning-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyWizard()">
+        <tr>
+          <td id="image">
+            <img src="images/wizard.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Wizard</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="wizard-price">130000</span>
+            </p>
+          </td>
+          <td id="level"><span id="wizard-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyTimeMachine()">
+        <tr>
+          <td id="image">
+            <img src="images/time-machine.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Time Machine</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="time-machine-price">1400000</span>
+            </p>
+          </td>
+          <td id="level"><span id="time-machine-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyPortal()">
+        <tr>
+          <td id="image">
+            <img src="images/portal.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Portal</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="portal-price">20000000</span>
+            </p>
+          </td>
+          <td id="level"><span id="portal-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyPlanet()">
+        <tr>
+          <td id="image">
+            <img src="images/portal.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Planet</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="planet-price">330000000</span>
+            </p>
+          </td>
+          <td id="level"><span id="planet-level">0</span></td>
+        </tr>
+      </table>
+      <table class="shopButton" onclick="buyRobot()">
+        <tr>
+          <td id="image">
+            <img src="images/robot.png" height="30" width="30" />
+          </td>
+          <td id="nameAndPrice">
+            <p>Robot</p>
+            <p>
+              <img src="images/humble-beginnings.png" />
+              <span id="robot-price">5100000000</span>
+            </p>
+          </td>
+          <td id="level"><span id="robot-level">0</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="menu" style="float: left">
+      <a href="#achivements">Achivements</a>
+      <a href="#stats">Stats</a>
+      <a href="#history">History</a>
+    </div>
+    <br />
+    <div class="achievements" id="achivements">
+      <h3>Achievements</h3>
+      <p>
+        <b><span id="num-achievements-text">0</span>/35</b>
+      </p>
+      <span id="humble-beginnings-text">???</span><br />
+      <span
+        id="humble-beginnings-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="took-a-while-text">???</span><br />
+      <span id="took-a-while-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="awesome-clicker-text">???</span><br />
+      <span id="awesome-clicker-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="busy-clicker-text">???</span><br />
+      <span id="busy-clicker-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="my-fingers-hurt-text">???</span><br />
+      <span id="my-fingers-hurt-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="how-long-have-you-been-playing-text">???</span><br />
+      <span
+        id="how-long-have-you-been-playing-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="click-text">???</span><br />
+      <span id="click-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="click-click-text">???</span><br />
+      <span id="click-click-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="clickety-click-text">???</span><br />
+      <span id="clickety-click-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="clabra-cladabra-clalakzam-text">???</span><br />
+      <span
+        id="clabra-cladabra-clalakzam-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="punch-text">???</span><br />
+      <span id="punch-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="ouch-that-hurts-text">???</span><br />
+      <span id="ouch-that-hurts-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="button-nearly-broken-text">???</span><br />
+      <span
+        id="button-nearly-broken-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="buying-a-pc-text">???</span><br />
+      <span id="buying-a-pc-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="broken-mice-text">???</span><br />
+      <span id="broken-mice-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="pcs-are-expensive-text">???</span><br />
+      <span
+        id="pcs-are-expensive-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="gray-clouds-text">???</span><br />
+      <span id="gray-clouds-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="i-cant-fall-asleep-text">???</span><br />
+      <span
+        id="i-cant-fall-asleep-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="mom-i-cant-see-its-too-yellow-text">???</span><br />
+      <span
+        id="mom-i-cant-see-its-too-yellow-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="magic-text">???</span><br />
+      <span id="magic-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="oops-i-struck-a-human-text">???</span><br />
+      <span id="oops-i-struck-a-human-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="hogwarts-text">???</span><br />
+      <span id="hogwarts-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="time-travel-text">???</span><br />
+      <span id="time-travel-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="vacation-in-the-past-text">???</span><br />
+      <span
+        id="vacation-in-the-past-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="the-future-has-more-clicks-text">???</span><br />
+      <span
+        id="the-future-has-more-clicks-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="a-new-dimension-text">???</span><br />
+      <span id="a-new-dimension-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="creepy-outerdimensional-monsters-text">???</span><br />
+      <span
+        id="creepy-outerdimensional-monsters-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="another-travel-method-text">???</span><br />
+      <span
+        id="another-travel-method-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="click-planet-text">???</span><br />
+      <span id="click-planet-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="they-are-taking-up-too-much-space-text">???</span><br />
+      <span
+        id="they-are-taking-up-too-much-space-description-text"
+        style="font-size: 12px"
+      ></span
+      ><br />
+      <p></p>
+      <span id="click-galaxy-text">???</span><br />
+      <span id="click-galaxy-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="beep-text">???</span><br />
+      <span id="beep-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="boop-text">???</span><br />
+      <span id="boop-description-text" style="font-size: 12px"></span><br />
+      <p></p>
+      <span id="beep-boop-text">???</span><br />
+      <span id="beep-boop-description-text" style="font-size: 12px"></span
+      ><br />
+      <p></p>
+      <span id="ctb-master-text">???</span><br />
+      <span id="ctb-master-description-text">???</span><br />
+    </div>
+    <div class="stats" id="stats">
+      <h3>Stats</h3>
+      Clicks:
+      <img src="images/humble-beginnings.png" height="15" width="10" />
+      <span id="stats-clicks">0</span><br />
+      Clicks (all-time):
+      <img src="images/humble-beginnings.png" height="15" width="10" />
+      <span id="stats-clicks-all-time">0</span><br />
+      Builds Owned:
+      <span id="stats-builds-owned">0</span><br />
+      Clicks per Second:
+      <span id="stats-clicks-per-second">0</span><br />
+      Clicks per Click:
+      <span id="stats-clicks-per-click">1</span><br />
+      Button Clicks:
+      <span id="stats-button-clicks">0</span><br />
+      Self-Made Clicks:
+      <span id="stats-self-made-clicks">0</span><br />
+      Build-Made Clicks:
+      <span id="stats-build-made-clicks">0</span><br />
+      Current Version: 1.1.01 (10/24/2023)
+    </div>
+    <div class="history" id="history">
+      <h3>History</h3>
+      Prototype/Alpha/Beta - Oct 2022-Jun 24 2023<br />
+      - Simple game<br />
+      - Too many bugs<br />
+      <p></p>
+      v1.0.01 - Jun 25 2023<br />
+      - 7 builds.<br />
+      - Stats menu.<br />
+      - Better graphics.<br />
+      - New button texture.<br />
+      <p></p>
+      v1.0.02 - Jun 27 2023<br />
+      - Added planets.<br />
+      <p></p>
+      v1.0.03 - Jun 28 2023<br />
+      - Added robots.<br />
+      - Added click image before prices.<br />
+      v1.1.01 - Oct 24 2023<br />
+      - Finished achivement system<br />
+      - Achivements for clicks/builds<br />
+      - Started using GitHub<br />
+    </div>
+  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEvvUuKZlcFNbwWeyzc_LR2S2B_aYmXB0",
+      authDomain: "algfish31-com.firebaseapp.com",
+      projectId: "algfish31-com",
+      storageBucket: "algfish31-com.appspot.com",
+      messagingSenderId: "425104283631",
+      appId: "1:425104283631:web:52807def469d5d3dc4481a",
+      measurementId: "G-PBM6B595YQ",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="click-the-button.js"></script>
+</html>
