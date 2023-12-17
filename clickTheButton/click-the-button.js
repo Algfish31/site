@@ -759,6 +759,16 @@ function buyButtonUpgrade() {
   }
 }
 
+// Popups
+
+function openAchievementsPopup() {
+  achievements-popup.classList.add("open-achievements-popup")
+}
+
+function closeAchievementsPopup() {
+  achievements-popup.classList.remove("open-achievements-popup")
+}
+
 // Saving
 
 function saveGame() {
