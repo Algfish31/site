@@ -90,12 +90,8 @@
   </script>
   <script>
     var savedGame = JSON.parse(localStorage.getItem("gameSave"));
-    document.getElementById("current-ctb-clicks").innerHTML = Math.round(
+    document.getElementById("ctb-total-clicks").innerHTML = Math.round(
       savedGame.clicksTotal
     );
-  </script>
-  <script>
-    setInterval(function() {
-      document.getElementById("ctb-total-clicks").innerHTML = localStorage.totalClicks;
   </script>
 </html>
