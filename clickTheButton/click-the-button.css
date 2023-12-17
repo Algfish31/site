@@ -77,4 +77,10 @@ body {
   transform: translate(-50%, -50%) scale(0.1);
   padding: 0px 30px 30px;
   visibility: hidden;
+  transition: transform 0.2s, top 0.4s;
 }
+
+.open-achievements-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
