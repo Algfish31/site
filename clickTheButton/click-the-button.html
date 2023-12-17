@@ -203,8 +203,9 @@
       </table>
     </div>
     <div class="menu" style="float: left">
-      <button>Achivements</button>
-      <div class="achievements-popup">
+      <button id="achievements-button" onclick="openAchievementsPopup()" >Achivements</button>
+      <div class="achievements-popup" id="achievements-popup">
+        <button onclick="closeAchievementsButton()" >X</button>
         <h3>Achievements</h3>
         <p>
           <b><span id="num-achievements-text">0</span>/35</b>
