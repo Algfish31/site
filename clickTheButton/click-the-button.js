@@ -10,33 +10,53 @@ var clickPower = startingClickPower;
 var numAchievements = 0;
 
 // Builds
-var autoclickerPrice = 15;
-var autoclickerLevel = 0;
-var autoclickerCps = 0.1;
-var fistPrice = 100;
-var fistLevel = 0;
-var fistCps = 1;
-var friendPrice = 1100;
-var friendLevel = 0;
-var friendCps = 8;
-var lightningPrice = 12000;
-var lightningLevel = 0;
-var lightningCps = 47;
-var wizardPrice = 130000;
-var wizardLevel = 0;
-var wizardCps = 260;
-var timeMachinePrice = 1400000;
-var timeMachineLevel = 0;
-var timeMachineCps = 1400;
-var portalPrice = 20000000;
-var portalLevel = 0;
-var portalCps = 7800;
-var planetPrice = 330000000;
-var planetLevel = 0;
-var planetCps = 44000;
-var robotPrice = 5100000000;
-var robotLevel = 0;
-var robotCps = 260000;
+var builds = {
+  autoClicker: {
+    price: 15,
+    level: 0,
+    cps: 0.1,
+  },
+  fist: {
+    price: 100,
+    level: 0,
+    cps: 1,
+  },
+  friend: {
+    price: 1100,
+    level: 0,
+    cps: 8,
+  },
+  lightning: {
+    price: 12000,
+    level: 0,
+    cps: 47,
+  },
+  wizard: {
+    price: 130000,
+    level: 0,
+    cps: 260,
+  },
+  timeMachine: {
+    price: 1400000,
+    level: 0,
+    cps: 1400,
+  },
+  portal: {
+    price: 20000000,
+    level: 0,
+    cps: 7800,
+  },
+  planet: {
+    price: 330000000,
+    level: 0,
+    cps: 44000,
+  },
+  robot: {
+    price: 5100000000,
+    level: 0,
+    cps: 260000,
+  },
+};
 
 // Upgrades
 var buttonUpgradePrice = 100;
@@ -87,29 +107,29 @@ function addClick(num) {
 }
 
 setInterval(function () {
-  clicks += autoclickerLevel * autoclickerCps;
-  clicks += fistLevel * fistCps;
-  clicks += friendLevel * friendCps;
-  clicks += lightningLevel * lightningCps;
-  clicks += wizardLevel * wizardCps;
-  clicks += timeMachineLevel * timeMachineCps;
-  clicks += portalLevel * portalCps;
+  clicks += builds.autoClicker.level * builds.autoClicker.cps;
+  clicks += builds.fist.level * builds.fist.cps;
+  clicks += builds.friend.level * builds.friend.cps;
+  clicks += builds.lightning.level * builds.lightning.cps;
+  clicks += builds.wizard.level * builds.wizard.cps;
+  clicks += builds.timeMachine.level * builds.timeMachine.cps;
+  clicks += builds.portal.level * builds.portal.cps;
 
-  clicksTotal += autoclickerLevel * autoclickerCps;
-  clicksTotal += fistLevel * fistCps;
-  clicksTotal += friendLevel * friendCps;
-  clicksTotal += lightningLevel * lightningCps;
-  clicksTotal += wizardLevel * wizardCps;
-  clicksTotal += timeMachineLevel * timeMachineCps;
-  clicksTotal += portalLevel * portalCps;
+  clicksTotal += builds.autoClicker.level * builds.autoClicker.cps;
+  clicksTotal += builds.fist.level * builds.fist.cps;
+  clicksTotal += builds.friend.level * builds.friend.cps;
+  clicksTotal += builds.lightning.level * builds.lightning.cps;
+  clicksTotal += builds.wizard.level * builds.wizard.cps;
+  clicksTotal += builds.timeMachine.level * builds.timeMachine.cps;
+  clicksTotal += builds.portal.level * builds.portal.cps;
 
-  buildMade += autoclickerLevel * autoclickerCps;
-  buildMade += fistLevel * fistCps;
-  buildMade += friendLevel * friendCps;
-  buildMade += lightningLevel * lightningCps;
-  buildMade += wizardLevel * wizardCps;
-  buildMade += timeMachineLevel * timeMachineCps;
-  buildMade += portalLevel * portalCps;
+  buildMade += builds.autoClicker.level * builds.autoClicker.cps;
+  buildMade += builds.fist.level * builds.fist.cps;
+  buildMade += builds.friend.level * builds.friend.cps;
+  buildMade += builds.lightning.level * builds.lightning.cps;
+  buildMade += builds.wizard.level * builds.wizard.cps;
+  buildMade += builds.timeMachine.level * builds.timeMachine.cps;
+  buildMade += builds.portal.level * builds.portal.cps;
   document.getElementById("click-num").innerHTML = Math.round(clicks);
 
   document.title =
@@ -119,13 +139,13 @@ setInterval(function () {
   document.getElementById("stats-clicks-all-time").innerHTML =
     Math.round(clicksTotal);
   document.getElementById("stats-builds-owned").innerHTML =
-    autoclickerLevel +
-    fistLevel +
-    friendLevel +
-    lightningLevel +
-    wizardLevel +
-    timeMachineLevel +
-    portalLevel;
+    builds.autoClicker.level +
+    builds.fist.level +
+    builds.friend.level +
+    builds.lightning.level +
+    builds.wizard.level +
+    builds.timeMachine.level +
+    builds.portal.level;
   document.getElementById("stats-clicks-per-second").innerHTML =
     Math.round(cps * 100) / 100;
   document.getElementById("stats-clicks-per-click").innerHTML =
@@ -222,7 +242,7 @@ setInterval(function () {
       ).innerHTML = "Click 1000000 times.";
     }
   }
-  if (autoclickerLevel > 0) {
+  if (builds.autoClicker.level > 0) {
     if (click == false) {
       click = true;
       numAchievements = numAchievements + 1;
@@ -234,7 +254,7 @@ setInterval(function () {
         "Have 1 autoclicker.";
     }
   }
-  if (autoclickerLevel > 1) {
+  if (builds.autoClicker.level > 1) {
     if (clickClick == false) {
       clickClick = true;
       numAchievements = numAchievements + 1;
@@ -246,7 +266,7 @@ setInterval(function () {
         "Have 2 autoclickers.";
     }
   }
-  if (autoclickerLevel > 9) {
+  if (builds.autoClicker.level > 9) {
     if (clicketyClick == false) {
       clicketyClick = true;
       numAchievements = numAchievements + 1;
@@ -259,7 +279,7 @@ setInterval(function () {
         "Have 10 autoclickers.";
     }
   }
-  if (autoclickerLevel > 99) {
+  if (builds.autoClicker.level > 99) {
     if (clabraCladabraClalakzam == false) {
       clabraCladabraClalakzam = true;
       numAchievements = numAchievements + 1;
@@ -274,7 +294,7 @@ setInterval(function () {
       ).innerHTML = "Have 100 autoclickers.";
     }
   }
-  if (fistLevel > 0) {
+  if (builds.fist.level > 0) {
     if (punch == false) {
       punch = true;
       numAchievements = numAchievements + 1;
@@ -286,7 +306,7 @@ setInterval(function () {
         "Have 1 fist.";
     }
   }
-  if (fistLevel > 9) {
+  if (builds.fist.level > 9) {
     if (ouchThatHurts == false) {
       ouchThatHurts = true;
       numAchievements = numAchievements + 1;
@@ -300,7 +320,7 @@ setInterval(function () {
         "Have 10 fists.";
     }
   }
-  if (fistLevel > 99) {
+  if (builds.fist.level > 99) {
     if (buttonNearlyBroken == false) {
       buttonNearlyBroken = true;
       numAchievements = numAchievements + 1;
@@ -315,7 +335,7 @@ setInterval(function () {
       ).innerHTML = "Have 100 fists.";
     }
   }
-  if (friendLevel > 0) {
+  if (builds.friend.level > 0) {
     if (buyingAPc == false) {
       buyingAPc = true;
       numAchievements = numAchievements + 1;
@@ -327,7 +347,7 @@ setInterval(function () {
         "Have 1 friend.";
     }
   }
-  if (friendLevel > 9) {
+  if (builds.friend.level > 9) {
     if (brokenMice == false) {
       brokenMice = true;
       numAchievements = numAchievements + 1;
@@ -339,7 +359,7 @@ setInterval(function () {
         "Have 10 friends.";
     }
   }
-  if (friendLevel > 99) {
+  if (builds.friend.level > 99) {
     if (pcsAreExpensive == false) {
       pcsAreExpensive = true;
       numAchievements = numAchievements + 1;
@@ -353,7 +373,7 @@ setInterval(function () {
         "Have 100 friends.";
     }
   }
-  if (lightningLevel > 0) {
+  if (builds.lightning.level > 0) {
     if (grayClouds == false) {
       grayClouds = true;
       numAchievements = numAchievements + 1;
@@ -365,7 +385,7 @@ setInterval(function () {
         "Have 1 lightning.";
     }
   }
-  if (lightningLevel > 9) {
+  if (builds.lightning.level > 9) {
     if (iCantFallAsleep == false) {
       iCantFallAsleep = true;
       numAchievements = numAchievements + 1;
@@ -379,7 +399,7 @@ setInterval(function () {
         "Have 10 lightnings.";
     }
   }
-  if (lightningLevel > 99) {
+  if (builds.lightning.level > 99) {
     if (momICantSeeItsTooYellow == false) {
       momICantSeeItsTooYellow = true;
       numAchievements = numAchievements + 1;
@@ -394,7 +414,7 @@ setInterval(function () {
       ).innerHTML = "Have 100 lightnings.";
     }
   }
-  if (wizardLevel > 0) {
+  if (builds.wizard.level > 0) {
     if (magic == false) {
       magic = true;
       numAchievements = numAchievements + 1;
@@ -406,7 +426,7 @@ setInterval(function () {
         "Have 100 lightnings.";
     }
   }
-  if (wizardLevel > 9) {
+  if (builds.wizard.level > 9) {
     if (oopsIStruckAHuman == false) {
       oopsIStruckAHuman = true;
       numAchievements = numAchievements + 1;
@@ -421,7 +441,7 @@ setInterval(function () {
       ).innerHTML = "Have 10 wizards.";
     }
   }
-  if (wizardLevel > 99) {
+  if (builds.wizard.level > 99) {
     if (hogwarts == false) {
       hogwarts = true;
       numAchievements = numAchievements + 1;
@@ -433,7 +453,7 @@ setInterval(function () {
         "Have 100 wizards.";
     }
   }
-  if (timeMachineLevel > 0) {
+  if (builds.timeMachine.level > 0) {
     if (timeTravel == false) {
       timeTravel = true;
       numAchievements = numAchievements + 1;
@@ -445,7 +465,7 @@ setInterval(function () {
         "Have 1 time machine.";
     }
   }
-  if (timeMachineLevel > 9) {
+  if (builds.timeMachine.level > 9) {
     if (vacationInThePast == false) {
       vacationInThePast = true;
       numAchievements = numAchievements + 1;
@@ -460,7 +480,7 @@ setInterval(function () {
       ).innerHTML = "Have 10 time machines.";
     }
   }
-  if (timeMachineLevel > 99) {
+  if (builds.timeMachine.level > 99) {
     if (theFutureHasMoreClicks == false) {
       theFutureHasMoreClicks = true;
       numAchievements = numAchievements + 1;
@@ -475,7 +495,7 @@ setInterval(function () {
       ).innerHTML = "Have 100 time machines.";
     }
   }
-  if (portalLevel > 0) {
+  if (builds.portal.level > 0) {
     if (aNewDimension == false) {
       aNewDimension = true;
       numAchievements = numAchievements + 1;
@@ -490,7 +510,7 @@ setInterval(function () {
       ).innerHTML = "Have a portal.";
     }
   }
-  if (portalLevel > 9) {
+  if (builds.portal.level > 9) {
     if (creepyOuterdimensionalMonsters == false) {
       creepyOuterdimensionalMonsters = true;
       numAchievements = numAchievements + 1;
@@ -506,7 +526,7 @@ setInterval(function () {
       ).innerHTML = "Have 10 portals.";
     }
   }
-  if (portalLevel > 99) {
+  if (builds.portal.level > 99) {
     if (anotherTravelMethod == false) {
       anotherTravelMethod = true;
       numAchievements = numAchievements + 1;
@@ -521,7 +541,7 @@ setInterval(function () {
       ).innerHTML = "Have 100 portals.";
     }
   }
-  if (planetLevel > 0) {
+  if (builds.planet.level > 0) {
     if (clickPlanet == false) {
       clickPlanet = true;
       numAchievements = numAchievements + 1;
@@ -533,7 +553,7 @@ setInterval(function () {
         "Have a planet.";
     }
   }
-  if (planetLevel > 9) {
+  if (builds.planet.level > 9) {
     if (theyAreTakingUpTooMuchSpace == false) {
       theyAreTakingUpTooMuchSpace = true;
       numAchievements = numAchievements + 1;
@@ -549,7 +569,7 @@ setInterval(function () {
       ).innerHTML = "Have 10 planets.";
     }
   }
-  if (planetLevel > 99) {
+  if (builds.planet.level > 99) {
     if (clickGalaxy == false) {
       clickGalaxy = true;
       numAchievements = numAchievements + 1;
@@ -561,7 +581,7 @@ setInterval(function () {
         "Have 100 planets.";
     }
   }
-  if (robotLevel > 0) {
+  if (builds.robot.level > 0) {
     if (beep == false) {
       beep = true;
       numAchievements = numAchievements + 1;
@@ -573,7 +593,7 @@ setInterval(function () {
         "Have a robot.";
     }
   }
-  if (robotLevel > 9) {
+  if (builds.robot.level > 9) {
     if (boop == false) {
       boop = true;
       numAchievements = numAchievements + 1;
@@ -585,7 +605,7 @@ setInterval(function () {
         "Have 10 robots.";
     }
   }
-  if (robotLevel > 99) {
+  if (builds.robot.level > 99) {
     if (beepBoop == false) {
       beepBoop = true;
       numAchievements = numAchievements + 1;
@@ -599,149 +619,7 @@ setInterval(function () {
   }
 }, 1000);
 
-// Builds
-
-function buyAutoClicker() {
-  if (clicks >= autoclickerPrice) {
-    clicks = clicks - autoclickerPrice;
-    autoclickerLevel += 1;
-    autoclickerPrice = autoclickerPrice * 1.15;
-    cps += autoclickerCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("autoclicker-price").innerHTML =
-      Math.round(autoclickerPrice);
-    document.getElementById("autoclicker-level").innerHTML =
-      Math.round(autoclickerLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyFist() {
-  if (clicks >= fistPrice) {
-    clicks = clicks - fistPrice;
-    fistLevel += 1;
-    fistPrice = fistPrice * 1.15;
-    cps += fistCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("fist-price").innerHTML = Math.round(fistPrice);
-    document.getElementById("fist-level").innerHTML = Math.round(fistLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-function buyFriend() {
-  if (clicks >= friendPrice) {
-    clicks = clicks - friendPrice;
-    friendLevel += 1;
-    friendPrice = friendPrice * 1.15;
-    cps += friendCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("friend-price").innerHTML = Math.round(friendPrice);
-    document.getElementById("friend-level").innerHTML = Math.round(friendLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyLightning() {
-  if (clicks >= lightningPrice) {
-    clicks = clicks - lightningPrice;
-    lightningLevel += 1;
-    lightningPrice = lightningPrice * 1.15;
-    cps += lightningCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("lightning-price").innerHTML =
-      Math.round(lightningPrice);
-    document.getElementById("lightning-level").innerHTML =
-      Math.round(lightningLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-function buyWizard() {
-  if (clicks >= wizardPrice) {
-    clicks = clicks - wizardPrice;
-    wizardLevel += 1;
-    wizardPrice = wizardPrice * 1.15;
-    cps += wizardCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("wizard-price").innerHTML = Math.round(wizardPrice);
-    document.getElementById("wizard-level").innerHTML = Math.round(wizardLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyTimeMachine() {
-  if (clicks >= timeMachinePrice) {
-    clicks = clicks - timeMachinePrice;
-    timeMachineLevel += 1;
-    timeMachinePrice = timeMachinePrice * 1.15;
-    cps += timeMachineCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("time-machine-price").innerHTML =
-      Math.round(timeMachinePrice);
-    document.getElementById("time-machine-level").innerHTML =
-      Math.round(timeMachineLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyPortal() {
-  if (clicks >= portalPrice) {
-    clicks = clicks - portalPrice;
-    portalLevel += 1;
-    portalPrice = portalPrice * 1.15;
-    cps += portalCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("portal-price").innerHTML = Math.round(portalPrice);
-    document.getElementById("portal-level").innerHTML = Math.round(portalLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyPlanet() {
-  if (clicks >= planetPrice) {
-    clicks = clicks - planetPrice;
-    planetLevel += 1;
-    planetPrice = planetPrice * 1.15;
-    cps += planetCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("planet-price").innerHTML = Math.round(planetPrice);
-    document.getElementById("planet-level").innerHTML = Math.round(planetLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
-function buyRobot() {
-  if (clicks >= robotPrice) {
-    clicks = clicks - robotPrice;
-    robotLevel += 1;
-    robotPrice = robotPrice * 1.15;
-    cps += robotCps;
-    document.getElementById("click-num").innerHTML = Math.round(clicks);
-    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-    document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
-    document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
-  } else {
-    alert("Not enough clicks.");
-  }
-}
-
 // Upgrades
-
 function buyButtonUpgrade() {
   if (clicks >= buttonUpgradePrice) {
     clicks = clicks - buttonUpgradePrice;
@@ -759,166 +637,122 @@ function buyButtonUpgrade() {
   }
 }
 
-// Saving
-
-function saveGame() {
-  var gameSave = {
-    clicks: clicks,
-    clicksTotal: clicksTotal,
-    buttonClicks: buttonClicks,
-    selfMade: selfMade,
-    buildMade: buildMade,
-    clickPower: clickPower,
-    startingClickPower: startingClickPower,
-    autoclickerPrice: autoclickerPrice,
-    autoclickerLevel: autoclickerLevel,
-    autoclickerCps: autoclickerCps,
-    fistPrice: fistPrice,
-    fistLevel: fistLevel,
-    fistCps: fistCps,
-    friendPrice: friendPrice,
-    friendLevel: friendLevel,
-    friendCps: friendCps,
-    lightningPrice: lightningPrice,
-    lightningLevel: lightningLevel,
-    lightningCps: lightningCps,
-    wizardPrice: wizardPrice,
-    wizardLevel: wizardLevel,
-    wizardCps: wizardCps,
-    timeMachinePrice: timeMachinePrice,
-    timeMachineLevel: timeMachineLevel,
-    timeMachineCps: timeMachineCps,
-    portalPrice: portalPrice,
-    portalLevel: portalLevel,
-    portalCps: portalCps,
-    planetPrice: planetPrice,
-    planetLevel: planetLevel,
-    planetCps: planetCps,
-    robotPrice: robotPrice,
-    robottLevel: robotLevel,
-    robotCps: robotCps,
-    buttonUpgradePrice: buttonUpgradePrice,
-    buttonUpgradeLevel: buttonUpgradeLevel,
-  };
-  localStorage.setItem("gameSave", JSON.stringify(gameSave));
+// Builds
+function buyBuild(buildName) {
+  if (clicks >= builds[buildName].price) {
+    clicks = clicks - builds[buildName].price;
+    builds[buildName].level += 1;
+    builds[buildName].price = builds[buildName].price * 1.15;
+    cps += builds[buildName].cps;
+    document.getElementById("click-num").innerHTML = Math.round(clicks);
+    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+    document.getElementById(`${buildName}-price`).innerHTML = Math.round(
+      builds[buildName].price
+    );
+    document.getElementById(`${buildName}-level`).innerHTML = Math.round(
+      builds[buildName].level
+    );
+  } else {
+    alert("Not enough clicks.");
+  }
 }
 
-function loadGame() {
-  var savedGame = JSON.parse(localStorage.getItem("gameSave"));
-  if (typeof savedGame.clicks !== "undefined") clicks = savedGame.clicks;
-  if (typeof savedGame.clicksTotal !== "undefined")
-    clicksTotal = savedGame.clicksTotal;
-  if (typeof savedGame.buttonClicks !== "undefined")
-    buttonClicks = savedGame.buttonClicks;
-  if (typeof savedGame.selfMade !== "undefined") selfMade = savedGame.selfMade;
-  if (typeof savedGame.buildMade !== "undefined")
-    buildMade = savedGame.buildMade;
-  if (typeof savedGame.clickPower !== "undefined")
-    clickPower = savedGame.clickPower;
-  if (typeof savedGame.startingClickPower !== "undefined")
-    startingClickPower = savedGame.startingClickPower;
-  if (typeof savedGame.autoclickerPrice !== "undefined")
-    autoclickerPrice = savedGame.autoclickerPrice;
-  if (typeof savedGame.autoclickerLevel !== "undefined")
-    autoclickerLevel = savedGame.autoclickerLevel;
-  if (typeof savedGame.autoclickerCps !== "undefined")
-    autoclickerCps = savedGame.autoclickerCps;
-  if (typeof savedGame.fistPrice !== "undefined")
-    fistPrice = savedGame.fistPrice;
-  if (typeof savedGame.fistLevel !== "undefined")
-    fistLevel = savedGame.fistLevel;
-  if (typeof savedGame.fistCps !== "undefined") fistCps = savedGame.fistCps;
-  if (typeof savedGame.friendPrice !== "undefined")
-    friendPrice = savedGame.friendPrice;
-  if (typeof savedGame.friendLevel !== "undefined")
-    friendLevel = savedGame.friendLevel;
-  if (typeof savedGame.friendCps !== "undefined")
-    friendCps = savedGame.friendCps;
-  if (typeof savedGame.lightningPrice !== "undefined")
-    lightningPrice = savedGame.lightningPrice;
-  if (typeof savedGame.lightningLevel !== "undefined")
-    lightningLevel = savedGame.lightningLevel;
-  if (typeof savedGame.lightningCps !== "undefined")
-    lightningCps = savedGame.lightningCps;
-  if (typeof savedGame.wizardPrice !== "undefined")
-    wizardPrice = savedGame.wizardPrice;
-  if (typeof savedGame.wizardLevel !== "undefined")
-    wizardLevel = savedGame.wizardLevel;
-  if (typeof savedGame.wizardCps !== "undefined")
-    wizardCps = savedGame.wizardCps;
-  if (typeof savedGame.timeMachinePrice !== "undefined")
-    timeMachinePrice = savedGame.timeMachinePrice;
-  if (typeof savedGame.timeMachineLevel !== "undefined")
-    timeMachineLevel = savedGame.timeMachineLevel;
-  if (typeof savedGame.timeMachineCps !== "undefined")
-    timeMachineCps = savedGame.timeMachineCps;
-  if (typeof savedGame.portalPrice !== "undefined")
-    portalPrice = savedGame.portalPrice;
-  if (typeof savedGame.portalLevel !== "undefined")
-    portalLevel = savedGame.portalLevel;
-  if (typeof savedGame.portalCps !== "undefined")
-    portalCps = savedGame.portalCps;
-  if (typeof savedGame.planetPrice !== "undefined")
-    planetPrice = savedGame.planetPrice;
-  if (typeof savedGame.planetLevel !== "undefined")
-    planetLevel = savedGame.planetLevel;
-  if (typeof savedGame.planetCps !== "undefined")
-    planetCps = savedGame.planetCps;
-  if (typeof savedGame.robotPrice !== "undefined")
-    robotPrice = savedGame.robotPrice;
-  if (typeof savedGame.robotLevel !== "undefined")
-    robotLevel = savedGame.robotLevel;
-  if (typeof savedGame.robotCps !== "undefined") robotCps = savedGame.robotCps;
-  if (typeof savedGame.buttonUpgradePrice !== "undefined")
-    buttonUpgradePrice = savedGame.buttonUpgradePrice;
-  if (typeof savedGame.buttonUpgradeLevel !== "undefined")
-    buttonUpgradeLevel = savedGame.buttonUpgradeLevel;
-  cps =
-    autoclickerLevel * autoclickerCps +
-    fistLevel * fistCps +
-    friendLevel * friendCps +
-    lightningLevel * lightningCps +
-    wizardLevel * wizardCps +
-    timeMachineLevel * timeMachineCps +
-    portalLevel * portalCps +
-    planetLevel * planetCps +
-    robotLevel * robotCps;
-  document.getElementById("click-num").innerHTML = Math.round(clicks);
-  document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-  document.getElementById("autoclicker-price").innerHTML =
-    Math.round(autoclickerPrice);
-  document.getElementById("autoclicker-level").innerHTML =
-    Math.round(autoclickerLevel);
-  document.getElementById("fist-price").innerHTML = Math.round(fistPrice);
-  document.getElementById("fist-level").innerHTML = Math.round(fistLevel);
-  document.getElementById("friend-price").innerHTML = Math.round(friendPrice);
-  document.getElementById("friend-level").innerHTML = Math.round(friendLevel);
-  document.getElementById("lightning-price").innerHTML =
-    Math.round(lightningPrice);
-  document.getElementById("lightning-level").innerHTML =
-    Math.round(lightningLevel);
-  document.getElementById("wizard-price").innerHTML = Math.round(wizardPrice);
-  document.getElementById("wizard-level").innerHTML = Math.round(wizardLevel);
-  document.getElementById("time-machine-price").innerHTML =
-    Math.round(timeMachinePrice);
-  document.getElementById("time-machine-level").innerHTML =
-    Math.round(timeMachineLevel);
-  document.getElementById("portal-price").innerHTML = Math.round(portalPrice);
-  document.getElementById("portal-level").innerHTML = Math.round(portalLevel);
-  document.getElementById("planet-price").innerHTML = Math.round(planetPrice);
-  document.getElementById("planet-level").innerHTML = Math.round(planetLevel);
-  document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
-  document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
-  document.getElementById("button-upgrade-price").innerHTML =
-    Math.round(buttonUpgradePrice);
-  document.getElementById("button-upgrade-level").innerHTML =
-    Math.round(buttonUpgradeLevel);
-}
+// TODO: fix save a load
+// function saveGame() {
+//   var gameSave = {
+//     cps: cps,
+//     clicks: clicks,
+//     clicksTotal: clicksTotal,
+//     buttonUpgradePrice: buttonUpgradePrice,
+//     buttonUpgradeLevel: buttonUpgradeLevel,
+//   };
+//   localStorage.setItem("gameSave", JSON.stringify(gameSave));
+//   localStorage.setItem("builds", JSON.stringify(builds));
+// }
 
-setInterval(function () {
-  saveGame();
-}, 1000);
+// function loadGame() {
+//   var savedGame = JSON.parse(localStorage.getItem("gameSave"));
 
-window.onload = function () {
-  loadGame();
-};
+//   if (savedBuilds !== undefined) {
+
+//     builds =  JSON.parse(localStorage.getItem("builds"));
+//   }
+
+//   if (savedGame.buttonUpgradePrice !== undefined)
+//     buttonUpgradePrice = savedGame.buttonUpgradePrice;
+//   if (savedGame.buttonUpgradeLevel !== undefined)
+//     buttonUpgradeLevel = savedGame.buttonUpgradeLevel;
+//   if (saveGame.cps !== undefined) {
+//     cps = saveGame.cps;
+//   }
+//   document.getElementById("click-num").innerHTML = Math.round(clicks);
+//   document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+//   document.getElementById("autoClicker-price").innerHTML = Math.round(
+//     build.autoClicker.price
+//   );
+//   document.getElementById("autoClicker-level").innerHTML = Math.round(
+//     build.autoClicker.level
+//   );
+//   document.getElementById("fist-price").innerHTML = Math.round(
+//     build.fist.price
+//   );
+//   document.getElementById("fist-level").innerHTML = Math.round(
+//     build.fist.level
+//   );
+//   document.getElementById("friend-price").innerHTML = Math.round(
+//     build.friend.price
+//   );
+//   document.getElementById("friend-level").innerHTML = Math.round(
+//     build.friend.level
+//   );
+//   document.getElementById("lightning-price").innerHTML = Math.round(
+//     build.lightning.price
+//   );
+//   document.getElementById("lightning-level").innerHTML = Math.round(
+//     build.lightning.level
+//   );
+//   document.getElementById("wizard-price").innerHTML = Math.round(
+//     builds.wizard.price
+//   );
+//   document.getElementById("wizard-level").innerHTML = Math.round(
+//     builds.wizard.level
+//   );
+//   document.getElementById("timeMachine-price").innerHTML = Math.round(
+//     builds.timeMachine.price
+//   );
+//   document.getElementById("timeMachine-level").innerHTML = Math.round(
+//     builds.timeMachine.level
+//   );
+//   document.getElementById("portal-price").innerHTML = Math.round(
+//     builds.portal.price
+//   );
+//   document.getElementById("portal-level").innerHTML = Math.round(
+//     builds.portal.level
+//   );
+//   document.getElementById("planet-price").innerHTML = Math.round(
+//     builds.planet.price
+//   );
+//   document.getElementById("planet-level").innerHTML = Math.round(
+//     builds.planet.level
+//   );
+//   document.getElementById("robot-price").innerHTML = Math.round(
+//     builds.robot.price
+//   );
+//   document.getElementById("robot-level").innerHTML = Math.round(
+//     builds.robot.level
+//   );
+//   document.getElementById("button-upgrade-price").innerHTML =
+//     Math.round(buttonUpgradePrice);
+//   document.getElementById("button-upgrade-level").innerHTML =
+//     Math.round(buttonUpgradeLevel);
+// }
+
+// window.onbeforeunload = function () {
+//   debugger;
+//   saveGame();
+//   return true;
+// };
+
+// window.onload = function () {
+//   loadGame();
+// };
