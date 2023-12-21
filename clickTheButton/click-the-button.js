@@ -68,7 +68,6 @@ var tookAWhile = false;
 var awesomeClicker = false;
 var busyClicker = false;
 var myFingersHurt = false;
-//hello!
 var howLongHaveYouBeenPlaying = false;
 var click = false;
 var clickClick = false;
