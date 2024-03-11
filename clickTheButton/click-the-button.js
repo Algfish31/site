@@ -37,6 +37,9 @@ var planetCps = 44000;
 var robotPrice = 5100000000;
 var robotLevel = 0;
 var robotCps = 260000;
+var alienMothershipPrice = 75000000000;
+var alienMothershipLevel = 0;
+var alienMothershipCps = 1600000;
 
 // Upgrades
 var buttonUpgradePrice = 100;
@@ -77,6 +80,7 @@ var clickGalaxy = false;
 var beep = false;
 var boop = false;
 var beepBoop = false;
+var ufo = false;
 
 function addClick(num) {
   clicks += num;
