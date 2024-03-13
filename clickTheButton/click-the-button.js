@@ -37,6 +37,9 @@ var planetCps = 44000;
 var robotPrice = 5100000000;
 var robotLevel = 0;
 var robotCps = 260000;
+var alienMothershipPrice = 75000000000;
+var alienMothershipLevel = 0;
+var alienMothershipCps = 1600000;
 
 // Upgrades
 var buttonUpgradePrice = 100;
@@ -77,6 +80,7 @@ var clickGalaxy = false;
 var beep = false;
 var boop = false;
 var beepBoop = false;
+var ufo = false;
 
 function addClick(num) {
   clicks += num;
@@ -740,6 +744,21 @@ function buyRobot() {
   }
 }
 
+function buyAlienMothership() {
+  if (clicks >= alienMothershipPrice) {
+    clicks = clicks - alienMothershipPrice;
+    alienMothershipLevel += 1;
+    alienMothershipPrice = alienMothershipPrice * 1.15;
+    cps += alienMothershipCps;
+    document.getElementById("click-num").innerHTML = Math.round(clicks);
+    document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+    document.getElementById("alien-mothership-price").innerHTML = Math.round(alienMothershipPrice);
+    document.getElementById("alien-mothership-level").innerHTML = Math.round(alienMothershipLevel);
+  } else {
+    alert("Not enough clicks.");
+  }
+}
+
 // Upgrades
 
 function buyButtonUpgrade() {
@@ -805,8 +824,11 @@ function saveGame() {
     planetLevel: planetLevel,
     planetCps: planetCps,
     robotPrice: robotPrice,
-    robottLevel: robotLevel,
+    robotLevel: robotLevel,
     robotCps: robotCps,
+    alienMothershipPrice: alienMothershipPrice,
+    alienMothershipLevel: alienMothershipLevel,
+    alienMothershipCps: alienMothershipCps,
     buttonUpgradePrice: buttonUpgradePrice,
     buttonUpgradeLevel: buttonUpgradeLevel,
   };
@@ -878,7 +900,14 @@ function loadGame() {
     robotPrice = savedGame.robotPrice;
   if (typeof savedGame.robotLevel !== "undefined")
     robotLevel = savedGame.robotLevel;
-  if (typeof savedGame.robotCps !== "undefined") robotCps = savedGame.robotCps;
+  if (typeof savedGame.robotCps !== "undefined") 
+    robotCps = savedGame.robotCps;
+  if (typeof savedGame.alienMothershipPrice !== "undefined")
+    alienMothershipPrice = savedGame.alienMothershipPrice;
+  if (typeof savedGame.alienMothershipLevel !== "undefined")
+    alienMothership = savedGame.alienMothershipLevel;
+  if (typeof savedGame.alienMothershipCps !== "undefined") 
+    alienMothershipCps = savedGame.alienMothershipCps;
   if (typeof savedGame.buttonUpgradePrice !== "undefined")
     buttonUpgradePrice = savedGame.buttonUpgradePrice;
   if (typeof savedGame.buttonUpgradeLevel !== "undefined")
@@ -892,7 +921,8 @@ function loadGame() {
     timeMachineLevel * timeMachineCps +
     portalLevel * portalCps +
     planetLevel * planetCps +
-    robotLevel * robotCps;
+    robotLevel * robotCps +
+    alienMothershipLevel * alienMothershipCps;
   document.getElementById("click-num").innerHTML = Math.round(clicks);
   document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
   document.getElementById("autoclicker-price").innerHTML =
@@ -919,6 +949,8 @@ function loadGame() {
   document.getElementById("planet-level").innerHTML = Math.round(planetLevel);
   document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
   document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
+  document.getElementById("alien-mothership-price").innerHTML = Math.round(alienMothershipPrice);
+  document.getElementById("alien-mothership-level").innerHTML = Math.round(alienMothershipLevel);
   document.getElementById("button-upgrade-price").innerHTML =
     Math.round(buttonUpgradePrice);
   document.getElementById("button-upgrade-level").innerHTML =
