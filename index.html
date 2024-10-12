@@ -33,20 +33,6 @@
       }
     </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-N9J2GNBLD1"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-N9J2GNBLD1");
-  </script>
   <body>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -64,33 +50,4 @@
     <h4>Click the Button</h4>
     <p>Total Clicks: <span id="ctb-total-clicks">0</span></p>
   </body>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCEvvUuKZlcFNbwWeyzc_LR2S2B_aYmXB0",
-      authDomain: "algfish31-com.firebaseapp.com",
-      projectId: "algfish31-com",
-      storageBucket: "algfish31-com.appspot.com",
-      messagingSenderId: "425104283631",
-      appId: "1:425104283631:web:52807def469d5d3dc4481a",
-      measurementId: "G-PBM6B595YQ",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-  <script>
-    var savedGame = JSON.parse(localStorage.getItem("gameSave"));
-    document.getElementById("ctb-total-clicks").innerHTML = Math.round(
-      savedGame.clicksTotal
-    );
-  </script>
 </html>
