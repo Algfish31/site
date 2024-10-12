@@ -964,3 +964,23 @@ setInterval(function () {
 window.onload = function () {
   loadGame();
 };
+
+// Last rizzmas
+
+// I gave you my gyatt
+
+// But the very next day
+
+// You rizzed it away
+
+// This year
+
+// To save me from fanum tax
+
+// I'll give it to someone SIGMA!
+
+// GG
+
+// You found the secret
+
+// Good job :)
