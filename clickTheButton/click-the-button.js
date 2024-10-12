@@ -984,3 +984,17 @@ window.onload = function () {
 // You found the secret
 
 // Good job :)
+
+// Email this code as the subject of an email
+
+// To algfish31supriselol@gmail.com
+
+// yvb4588u482d3u48uv4
+
+// Make the email whatever you want
+
+// If you want, gimme a new game idea
+
+// And put down a name that you want me to use for a shoutout
+
+// Good luck (The only reason I did this was to get to 1000 lines of code lol)
