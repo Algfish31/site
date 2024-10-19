@@ -36,3 +36,15 @@ li a:hover {
 .active {
   background-color: #103f6e;
 }
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color:#103f6e;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
