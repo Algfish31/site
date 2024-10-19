@@ -2,52 +2,26 @@
 <html>
   <head>
     <title>Algfish31.com - Home</title>
-    <style>
-      body {
-        background-color: lightblue;
-        font-family: monospace, sans-serif;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #5492d1;
-      }
-
-      li {
-        float: left;
-      }
-
-      li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-
-      /* Change the link color to #111 (black) on hover */
-      li a:hover {
-        background-color: #103f6e;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="index.html">Home</a></li>
       <li><a href="clickTheButton/click-the-button.html">Click the Button</a></li>
-      <li><a href="about.html">About</a></li>
+      <li style="float: right;"><a href="about.html">About</a></li>
+      <li><a href="webcreation.html">Web Creation</a></li>
     </ul>
-    <h1>Algfish31.com</h1>
-    <p>Play games. Have fun.</p>
-    <h3>Welcome to Algfish31.com!</h3>
-    <p>On this site, you can play a game called Click the Button. More games will be coming soon.</p>
-    <h2>Instructions</h2>
-    <h4>Click the Button</h4>
-    <p>In Click the Button, you um, click the button. With clicks, you can spend your clicks to get more clicks, and it just goes on and on and on...</p>
-    <h3>Stats</h3>
-    <h4>Click the Button</h4>
-    <p>Total Clicks: <span id="ctb-total-clicks">0</span></p>
+    <div style="padding-left: 8px">
+      <h1>Algfish31.com</h1>
+      <p>Play games. Have fun.</p>
+      <h3>Welcome to Algfish31.com!</h3>
+      <p>On this site, you can play a game called Click the Button. More games will be coming soon.</p>
+      <h2>Instructions</h2>
+      <h4>Click the Button</h4>
+      <p>In Click the Button, you um, click the button. With clicks, you can spend your clicks to get more clicks, and it just goes on and on and on...</p>
+      <h3>Stats</h3>
+      <h4>Click the Button</h4>
+      <p>Total Clicks: <span id="ctb-total-clicks">0</span></p>
+    </div>
   </body>
 </html>
