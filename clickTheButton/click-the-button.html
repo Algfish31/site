@@ -2,8 +2,11 @@
   <head>
     <title>0 clicks - Click the Button - Algfish31.com</title>
     <link rel="stylesheet" href="click-the-button.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body oncontextmenu="return false">
     <div class="section-left">
       <div class="score-container">
         <h1><span id="click-num">0</span> clicks</h1>
@@ -25,8 +28,7 @@
           <td id="nameAndPrice">
             <h3 id="notification-text">Most Recent Achievement</h3>
             <span id="notification-description-text" style="font-size: 12px"
-              >Description</span
-            >
+              >Description</span>
           </td>
         </tr>
       </table>
@@ -204,7 +206,7 @@
       </table>
     </div>
     <div class="menu" style="float: left">
-      <button id="achievements-button" onclick="openAchievementsPopup()" >Achivements</button>
+      <button id="achievements-button" onclick="openAchievementsPopup()" style="font-family: 'Agdasima', monospace, sans-serif;">Achivements</button>
       <div class="achievements-popup" id="achievements-popup">
         <button onclick="closeAchievementsButton()" >X</button>
         <h3>Achievements</h3>
@@ -384,11 +386,10 @@
         <span id="ctb-master-text">???</span><br />
         <span id="ctb-master-description-text">???</span><br />
       </div>
-      <button>Stats</button>
-      <button>History</button>
+      <button style="font-family: 'Agdasima', monospace, sans-serif;">Stats</button>
+      <button style="font-family: 'Agdasima', monospace, sans-serif;">History</button><br>
     </div>
-    <br />
-    <div class="stats" id="stats">
+    <div class="stats" id="stats" style="font-family: 'Agdasima', monospace, sans-serif;">
       <h3>Stats</h3>
       Clicks:
       <img src="images/humble-beginnings.png" height="15" width="10" />
@@ -408,9 +409,9 @@
       <span id="stats-self-made-clicks">0</span><br />
       Build-Made Clicks:
       <span id="stats-build-made-clicks">0</span><br />
-      Current Version: 1.1.02 (03/11/2023)
+      Current Version: 1.1.03 (10.21.2024)
     </div>
-    <div class="history" id="history">
+    <div class="history" id="history" style="font-family: 'Agdasima', monospace, sans-serif;">
       <h3>History</h3>
       Prototype/Alpha/Beta - Oct 2022-Jun 24 2023<br />
       - Simple game<br />
@@ -428,14 +429,21 @@
       v1.0.03 - Jun 28 2023<br />
       - Added robots.<br />
       - Added click image before prices.<br />
+      <p></p>
       v1.1.01 - Oct 24 2023<br />
       - Unfinished achivement system<br />
       - Achivements for clicks/builds<br />
       - Started using GitHub<br />
+      <p></p>
       v1.1.02 - Mar 11 2024<br>
       - Added alien motherships.<br>
       - Click the button is back!<br>
+      <p></p>
+      v1.1.03 - Oct 21 2024<br>
+      - Added reset button<br>
+      - Font change
     </div>
+    <button onclick="resetGame()">RESET</button>
     <p><a href="/index.html">Back to Home</a></p>
   </body>
   <script src="click-the-button.js"></script>

@@ -82,6 +82,24 @@ var boop = false;
 var beepBoop = false;
 var ufo = false;
 
+document.onkeydown = (e) => {
+  if (e.key == 123) {
+      e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+      e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+      e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+      e.preventDefault();
+  }
+  if (e.ctrlKey && e.key == 'U') {
+      e.preventDefault();
+  }
+};
+
 function addClick(num) {
   clicks += num;
   clicksTotal += num;
@@ -925,24 +943,18 @@ function loadGame() {
     alienMothershipLevel * alienMothershipCps;
   document.getElementById("click-num").innerHTML = Math.round(clicks);
   document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
-  document.getElementById("autoclicker-price").innerHTML =
-    Math.round(autoclickerPrice);
-  document.getElementById("autoclicker-level").innerHTML =
-    Math.round(autoclickerLevel);
+  document.getElementById("autoclicker-price").innerHTML = Math.round(autoclickerPrice);
+  document.getElementById("autoclicker-level").innerHTML = Math.round(autoclickerLevel);
   document.getElementById("fist-price").innerHTML = Math.round(fistPrice);
   document.getElementById("fist-level").innerHTML = Math.round(fistLevel);
   document.getElementById("friend-price").innerHTML = Math.round(friendPrice);
   document.getElementById("friend-level").innerHTML = Math.round(friendLevel);
-  document.getElementById("lightning-price").innerHTML =
-    Math.round(lightningPrice);
-  document.getElementById("lightning-level").innerHTML =
-    Math.round(lightningLevel);
+  document.getElementById("lightning-price").innerHTML = Math.round(lightningPrice);
+  document.getElementById("lightning-level").innerHTML = Math.round(lightningLevel);
   document.getElementById("wizard-price").innerHTML = Math.round(wizardPrice);
   document.getElementById("wizard-level").innerHTML = Math.round(wizardLevel);
-  document.getElementById("time-machine-price").innerHTML =
-    Math.round(timeMachinePrice);
-  document.getElementById("time-machine-level").innerHTML =
-    Math.round(timeMachineLevel);
+  document.getElementById("time-machine-price").innerHTML = Math.round(timeMachinePrice);
+  document.getElementById("time-machine-level").innerHTML = Math.round(timeMachineLevel);
   document.getElementById("portal-price").innerHTML = Math.round(portalPrice);
   document.getElementById("portal-level").innerHTML = Math.round(portalLevel);
   document.getElementById("planet-price").innerHTML = Math.round(planetPrice);
@@ -951,10 +963,8 @@ function loadGame() {
   document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
   document.getElementById("alien-mothership-price").innerHTML = Math.round(alienMothershipPrice);
   document.getElementById("alien-mothership-level").innerHTML = Math.round(alienMothershipLevel);
-  document.getElementById("button-upgrade-price").innerHTML =
-    Math.round(buttonUpgradePrice);
-  document.getElementById("button-upgrade-level").innerHTML =
-    Math.round(buttonUpgradeLevel);
+  document.getElementById("button-upgrade-price").innerHTML = Math.round(buttonUpgradePrice);
+  document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
 }
 
 setInterval(function () {
@@ -965,36 +975,113 @@ window.onload = function () {
   loadGame();
 };
 
-// Last rizzmas
+function resetGame() {
+  // Stats
+  clicks = 0;
+  clicksTotal = 0;
+  buttonClicks = 0;
+  selfMade = 0;
+  buildMade = 0;
+  cps = 0;
+  startingClickPower = 1;
+  clickPower = startingClickPower;
+  numAchievements = 0;
 
-// I gave you my gyatt
+  // Builds
+  autoclickerPrice = 15;
+  autoclickerLevel = 0;
+  autoclickerCps = 0.1;
+  fistPrice = 100;
+  fistLevel = 0;
+  fistCps = 1;
+  friendPrice = 1100;
+  friendLevel = 0;
+  friendCps = 8;
+  lightningPrice = 12000;
+  lightningLevel = 0;
+  lightningCps = 47;
+  wizardPrice = 130000;
+  wizardLevel = 0;
+  wizardCps = 260;
+  timeMachinePrice = 1400000;
+  timeMachineLevel = 0;
+  timeMachineCps = 1400;
+  portalPrice = 20000000;
+  portalLevel = 0;
+  portalCps = 7800;
+  planetPrice = 330000000;
+  planetLevel = 0;
+  planetCps = 44000;
+  robotPrice = 5100000000;
+  robotLevel = 0;
+  robotCps = 260000;
+  alienMothershipPrice = 75000000000;
+  alienMothershipLevel = 0;
+  alienMothershipCps = 1600000;
 
-// But the very next day
+  // Upgrades
+  buttonUpgradePrice = 100;
+  buttonUpgradeLevel = 0;
 
-// You rizzed it away
-
-// This year
-
-// To save me from fanum tax
-
-// I'll give it to someone SIGMA!
-
-// GG
-
-// You found the secret
-
-// Good job :)
-
-// Email this code as the subject of an email
-
-// To algfish31supriselol@gmail.com
-
-// yvb4588u482d3u48uv4
-
-// Make the email whatever you want
-
-// If you want, gimme a new game idea
-
-// And put down a name that you want me to use for a shoutout
-
-// Good luck (The only reason I did this was to get to 1000 lines of code lol)
+  // Achievements
+  humbleBeginnings = false;
+  tookAWhile = false;
+  awesomeClicker = false;
+  busyClicker = false;
+  myFingersHurt = false;
+  howLongHaveYouBeenPlaying = false;
+  click = false;
+  clickClick = false;
+  clicketyClick = false;
+  clabraCladabraClalakzam = false;
+  punch = false;
+  ouchThatHurts = false;
+  buttonNearlyBroken = false;
+  buyingAPc = false;
+  brokenMice = false;
+  pcsAreExpensive = false;
+  grayClouds = false;
+  iCantFallAsleep = false;
+  momICantSeeItsTooYellow = false;
+  magic = false;
+  oopsIStruckAHuman = false;
+  hogwarts = false;
+  timeTravel = false;
+  vacationInThePast = false;
+  theFutureHasMoreClicks = false;
+  aNewDimension = false;
+  creepyOuterdimensionalMonsters = false;
+  anotherTravelMethod = false;
+  clickPlanet = false;
+  theyAreTakingUpTooMuchSpace = false;
+  clickGalaxy = false;
+  beep = false;
+  boop = false;
+  beepBoop = false;
+  ufo = false;
+  document.getElementById("click-num").innerHTML = Math.round(clicks);
+  document.getElementById("cps-num").innerHTML = Math.round(cps * 100) / 100;
+  document.getElementById("autoclicker-price").innerHTML = Math.round(autoclickerPrice);
+  document.getElementById("autoclicker-level").innerHTML = Math.round(autoclickerLevel);
+  document.getElementById("fist-price").innerHTML = Math.round(fistPrice);
+  document.getElementById("fist-level").innerHTML = Math.round(fistLevel);
+  document.getElementById("friend-price").innerHTML = Math.round(friendPrice);
+  document.getElementById("friend-level").innerHTML = Math.round(friendLevel);
+  document.getElementById("lightning-price").innerHTML = Math.round(lightningPrice);
+  document.getElementById("lightning-level").innerHTML = Math.round(lightningLevel);
+  document.getElementById("wizard-price").innerHTML = Math.round(wizardPrice);
+  document.getElementById("wizard-level").innerHTML = Math.round(wizardLevel);
+  document.getElementById("time-machine-price").innerHTML = Math.round(timeMachinePrice);
+  document.getElementById("time-machine-level").innerHTML = Math.round(timeMachineLevel);
+  document.getElementById("portal-price").innerHTML = Math.round(portalPrice);
+  document.getElementById("portal-level").innerHTML = Math.round(portalLevel);
+  document.getElementById("planet-price").innerHTML = Math.round(planetPrice);
+  document.getElementById("planet-level").innerHTML = Math.round(planetLevel);
+  document.getElementById("robot-price").innerHTML = Math.round(robotPrice);
+  document.getElementById("robot-level").innerHTML = Math.round(robotLevel);
+  document.getElementById("alien-mothership-price").innerHTML = Math.round(alienMothershipPrice);
+  document.getElementById("alien-mothership-level").innerHTML = Math.round(alienMothershipLevel);
+  document.getElementById("button-upgrade-price").innerHTML = Math.round(buttonUpgradePrice);
+  document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
+  saveGame();
+}

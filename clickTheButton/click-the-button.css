@@ -1,12 +1,12 @@
 body {
-  font-family: "Neue Pixel Sans", monospace, sans-serif;
+  font-family: "Agdasima", monospace, sans-serif;
   background-color: lightgray;
   user-select: none;
 }
 .section-left {
   float: left;
   width: 80%;
-  height: 1070px;
+  height: 1120px;
 }
 
 .section-right {
