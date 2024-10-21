@@ -1,10 +1,10 @@
 /* This CSS file is for every single main page */
 
-/* Those pages are HOME and ABOUT */
+/* Those pages are HOME, ABOUT, CONTACT, WEB CREATION, AND BE A FISH */
 
 body {
   background-color: lightblue;
-  font-family: monospace, sans-serif;
+  font-family: "Agdasima", monospace, sans-serif;
   margin: 0
 }
 
