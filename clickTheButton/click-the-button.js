@@ -967,14 +967,6 @@ function loadGame() {
   document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
 }
 
-setInterval(function () {
-  saveGame();
-}, 1000);
-
-window.onload = function () {
-  loadGame();
-};
-
 function resetGame() {
   // Stats
   clicks = 0;
@@ -1085,3 +1077,11 @@ function resetGame() {
   document.getElementById("button-upgrade-level").innerHTML = Math.round(buttonUpgradeLevel);
   saveGame();
 }
+
+setInterval(function () {
+  saveGame();
+}, 1000);
+
+window.onload = function () {
+  loadGame();
+};
