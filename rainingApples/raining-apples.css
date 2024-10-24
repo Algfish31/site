@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e0f7fa;
+  font-family: "Agdasima", Arial, sans-serif;
+}
+
+#gameCanvas {
+  border: 2px solid #4caf50;
+  background-color: #ffffff;
+}
+
+#gameOver {
+  position: absolute;
+  color: red;
+  font-size: 30px;
+  display: none;
+}
